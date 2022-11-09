@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import UserService from './../Service/UserService';
 import JwtRequest from './../Model/AppUser';
-// import Header from './../../Layout/Component/Header';
 import Navbar from "../../Layout/Component/NavBar";
 
 function Login() {
@@ -57,8 +56,7 @@ function Login() {
                                     //alert(error.message);
                                     alert("Invalid Username/Password. Please try again!");
                                 });
-                        }}
-                    >
+                        }}>
                         Login
                     </button>
                 </div>

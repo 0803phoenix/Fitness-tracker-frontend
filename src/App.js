@@ -6,6 +6,7 @@ import CustomerList from './Customer/Component/CustomerList';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
+import HomeLoggedIn from './Pages/HomeLoggedIn';
 
 
 
@@ -14,6 +15,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
+          {/* <Route path="/" element={<HomeLoggedIn/>} /> */}
           <Route path="/" element={<Home/>} />
           <Route path="/about" element={<About/>} />
           <Route path="/contact" element={<Contact />} />
