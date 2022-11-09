@@ -2,6 +2,7 @@ import React from 'react';
 
 function Footer() {
     return (
+
         <footer className="container-fluid bg-secondary text-white py-1">
             <div className="mt-3">
                 <p className="float-right">
@@ -12,6 +13,7 @@ function Footer() {
                     <a href="#">Terms</a>
                 </p>
             </div>
+
         </footer>
     );
 }

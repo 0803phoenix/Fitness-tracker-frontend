@@ -6,7 +6,7 @@ import {LinkContainer} from 'react-router-bootstrap';
 
 const NavBar = (props) => {
   return (
-    <Navbar bg="dark" expand="lg" variant="dark">
+    <Navbar bg="transparent" expand="lg" variant="light">
       <LinkContainer to={"/"}>
         <Navbar.Brand>Fitness Tracker</Navbar.Brand>
       </LinkContainer>
@@ -24,7 +24,7 @@ const NavBar = (props) => {
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>
-        <button type="button" className="btn btn-outline-light float-right">Get Started</button>
+        <button type="button" className="btn btn-outline-dark float-right">Get Started</button>
     </Navbar>
   );
 };
