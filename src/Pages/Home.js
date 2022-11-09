@@ -1,5 +1,6 @@
 import React from "react";
-import Footer from "./Footer";
+import Footer from "../Layout/Component/Footer";
+import HomeCarousel from "../Layout/Component/HomeCarousel";
 
 
 // import AddStudent from "../../student/component/AddStudent";
@@ -7,7 +8,7 @@ import Footer from "./Footer";
 // import UpdateStudent from "../../student/component/UpdateStudent";
 // import ViewStudent from "../../student/component/ViewStudent";
 
-import NavBar from "./NavBar";
+import NavBar from "../Layout/Component/NavBar";
 // import AuthHeader from "../../Authentication/Service/AuthHeader";
 
 class Home extends React.Component {
@@ -15,6 +16,7 @@ class Home extends React.Component {
         return (
             <React.Fragment className="container-fluid">
                 <NavBar/>
+                <HomeCarousel/>
                 <Footer/>
             </React.Fragment>
         );
