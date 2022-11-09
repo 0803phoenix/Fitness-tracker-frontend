@@ -1,11 +1,11 @@
 import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import Home from './Layout/Component/Home';
 import Login from './Authentication/Component/Login';
 import Logout from './Authentication/Component/Logout';
 import CustomerList from './Customer/Component/CustomerList';
-import About from './Component/About';
-import Contact from './Component/Contact';
+import Home from './Pages/Home';
+import About from './Pages/About';
+import Contact from './Pages/Contact';
 
 
 
