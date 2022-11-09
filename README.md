@@ -73,8 +73,8 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 <!-- Create React application 
 Create Structure of Project - component, model, services, naming conventions for all as defined
 Dependencies required
-1. For Designing Bootstrap or material Ui or Both 
-2. For Navigation- react-router-dom, router-dom
-3. For Integration with backend - Axios
+1. For Designing Bootstrap or material Ui or Both - npm install react-router-bootstrap, npm install react-bootstrap
+2. For Navigation- react-router-dom, router-dom --npm install react-router-dom
+3. For Integration with backend - Axios-npm install axios
 4. For state management - Redux(Optional) 
 -->

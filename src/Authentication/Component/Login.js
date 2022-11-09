@@ -2,7 +2,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import UserService from './../Service/UserService';
 import JwtRequest from './../Model/AppUser';
-import Header from './../../Layout/Component/Header';
+// import Header from './../../Layout/Component/Header';
+import Navbar from "../../Layout/Component/NavBar";
 
 function Login() {
     const [user, setUser] = useState({ login: new JwtRequest() });
@@ -10,11 +11,7 @@ function Login() {
     let service = new UserService();
     return (
         <div>
-            <Header
-                title="React SPA using Router"
-                description="A single-page application is a web application or website that interacts with the user by dynamically rewriting the current web page with new data from the web server, instead of the default method of a web browser loading entire new pages."
-            />
-
+            <Navbar/>
             <h1>Login Page</h1>
             <form>
                 <div className="form-group">
