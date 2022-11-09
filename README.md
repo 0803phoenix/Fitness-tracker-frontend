@@ -68,3 +68,13 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+<!-- Create React application 
+Create Structure of Project - component, model, services, naming conventions for all as defined
+Dependencies required
+1. For Designing Bootstrap or material Ui or Both 
+2. For Navigation- react-router-dom, router-dom
+3. For Integration with backend - Axios
+4. For state management - Redux(Optional) 
+-->
