@@ -2,8 +2,9 @@ import React from "react";
 import Footer from "../Layout/Component/Footer";
 import HomeCards from "../Layout/Component/HomeCards";
 import NavBar from "../Layout/Component/NavBar";
+import HomeCarousel from "../Layout/Component/HomeCarousel";
 
-
+// import AuthHeader from "../../Authentication/Service/AuthHeader";
 
 
 class Home extends React.Component {
@@ -11,6 +12,7 @@ class Home extends React.Component {
         return (
             <React.Fragment className="container-fluid">
                 <NavBar/>
+                <HomeCarousel/>
                 <HomeCards/>
                 <Footer/>
             </React.Fragment>
