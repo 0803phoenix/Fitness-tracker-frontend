@@ -10,7 +10,7 @@ import HomeCarousel from "../Layout/Component/HomeCarousel";
 class Home extends React.Component {
     render() {
         return (
-            <React.Fragment className="container-fluid">
+            <React.Fragment>
                 <NavBar/>
                 <HomeCarousel/>
                 <HomeCards/>
