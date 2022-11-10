@@ -20,21 +20,21 @@ class About extends Component {
 
   render() {
     const myStyle = {
-      backgroundImage:
-        "url('https://t3.ftcdn.net/jpg/02/97/91/38/360_F_297913876_pxLCVBrLEyznyqdHvNpKmNRPvYWoqlEW.jpg')",
+      // backgroundImage:
+      //   "url('https://t3.ftcdn.net/jpg/02/97/91/38/360_F_297913876_pxLCVBrLEyznyqdHvNpKmNRPvYWoqlEW.jpg')",
       fontSize: "20px",
       backgroundSize: "cover",
       backgroundRepeat: "no-repeat",
     };
 
     return (
+      <>
+      <NavBar />
       <div style={myStyle}>
-        <NavBar />
-
         <Card
           text={"light"}
           // style={{ width: "100%" }}
-          className=" text-white px-md-5 py-md-5 my-md-5 mx-md-5 "
+          className=" text-white p-5 "
         >
           <Card.Img src="https://picsum.photos/1200/300" alt="Card image" />
           <Card.ImgOverlay>
@@ -57,9 +57,9 @@ class About extends Component {
         <Card
           text={"light"}
           // style={{ width: "100%" }}
-          className=" text-white px-md-5 py-md-5 my-md-5 mx-md-5 "
+          className=" text-white p-5"
         >
-          <Card.Img src="https://picsum.photos/1200/300" alt="Card image" />
+          <Card.Img src="https://picsum.photos/1200/300" alt="Card image"/>
           <Card.ImgOverlay>
             <Card.Text className="px-md-5 py-md-5">
               <h2>Why use Fitness Tracker?</h2>
@@ -84,7 +84,7 @@ class About extends Component {
             <Card
               text={"light"}
               // style={{ width: "70%" }}
-              className=" text-white px-md-5 py-md-5 my-md-5 mx-md-5 "
+              className=" text-white p-5"
             >
               <Card.Img src="https://picsum.photos/1200/300" alt="Card image" />
               <Card.ImgOverlay>
@@ -107,9 +107,9 @@ class About extends Component {
             <Card
               text={"light"}
               // style={{ width: "70%" }}
-              className=" text-white px-md-5 py-md-5 my-md-5 mx-md-5 "
+              className=" text-white p-5 "
             >
-              <Card.Img src="https://picsum.photos/1200/300" alt="Card image" />
+              <Card.Img src="https://picsum.photos/1200/300" alt="Card image"  />
               <Card.ImgOverlay>
                 <Card.Text className="px-md-5 py-md-5">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
@@ -133,6 +133,7 @@ class About extends Component {
 
         <Footer />
       </div>
+     </> 
     );
   }
 }
