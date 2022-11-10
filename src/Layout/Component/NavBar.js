@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import {LinkContainer} from 'react-router-bootstrap';
-// import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router';
+import { LinkContainer } from "react-router-bootstrap";
+import { useNavigate } from "react-router";
 import Register from "../../Authentication/Component/Register";
-
+import Modal from "react-bootstrap/Modal";
+import Login from "../../Authentication/Component/Login";
+// import Login from './../../Authentication/Component/Login';
 
 const NavBar = (props) => {
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const navigate = useNavigate();
+
   return (
     <Navbar bg="transparent" expand="lg" variant="light">
       <LinkContainer to={"/"}>
@@ -28,12 +35,20 @@ const NavBar = (props) => {
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>
-        <button type="button" 
+      {/* <button type="button" 
         className="btn btn-outline-dark float-right" 
-        onClick={()=>navigate('/register')}>Get Started</button>
-        {/* <button type="button" 
-        className="btn btn-outline-dark float-right" 
-        onClick={()=>{<Register/>}}>Get Started</button> */}
+        onClick={()=>navigate('/register')}>Get Started</button> */}
+      <button
+        type="button"
+        className="btn btn-outline-dark float-right"
+        onClick={handleShow}
+      >
+        Get Started
+      </button>
+
+      <Modal show={show} onHide={handleClose}>
+        <Register />
+      </Modal>
     </Navbar>
   );
 };

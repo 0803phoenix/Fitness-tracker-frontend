@@ -3,18 +3,21 @@ import { useNavigate } from "react-router";
 import userDto from "./../Model/UserDto";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import NavBar from "../../Layout/Component/NavBar";
-import Footer from './../../Layout/Component/Footer';
 import UserService from './../Service/UserService';
 
 function Register() {
   const [user, setUser] = useState({ register: new userDto() });
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   const navigate = useNavigate();
   let service = new UserService();
 
   return (
     <>
-    <NavBar/>
       <Modal.Dialog>
         <Modal.Header closeButton>
           <Modal.Title>Register YourSelf</Modal.Title>
@@ -31,7 +34,7 @@ function Register() {
                 placeholder="Enter User Name"
                 value={user.register.usename}
                 onChange={(e) =>
-                    setUser({ register: { ...user.register, username: e.target.value } })
+                  setUser({ register: { ...user.register, username: e.target.value } })
                 }
               />
             </div>
@@ -44,10 +47,10 @@ function Register() {
                 placeholder="Enter Password"
                 value={user.register.password}
                 onChange={(e) =>
-                    setUser({ register: { ...user.register, password: e.target.value } })
+                  setUser({ register: { ...user.register, password: e.target.value } })
                 }
               />
-              </div>
+            </div>
           </form>
         </Modal.Body>
 
@@ -55,26 +58,25 @@ function Register() {
           <Button variant="success" onClick={() => navigate("/login")}>
             Already a Member
           </Button>
-          <Button variant="secondary" 
-                  onClick={
-                    (e)=>{
-                      e.preventDefault();
-                      service
-                      .register(user.register)
-                      .then((result)=>{
-                        sessionStorage.setItem('currentUser',JSON.stringify(result));
-                        // sessionStorage.setItem("username", user.login.username);
-                        navigate("/customerDetails");
-                      })
-                      .catch((error)=>{
-                        alert("Username already exist");
-                      })
-          }}>
+          <Button variant="secondary"
+            onClick={
+              (e) => {
+                e.preventDefault();
+                service
+                  .register(user.register)
+                  .then((result) => {
+                    sessionStorage.setItem('currentUser', JSON.stringify(result));
+                    // sessionStorage.setItem("username", user.login.username);
+                    navigate("/login");
+                  })
+                  .catch((error) => {
+                    alert("Username already exist");
+                  })
+              }}>
             Register
           </Button>
         </Modal.Footer>
       </Modal.Dialog>
-      <Footer/>
     </>
   );
 }
