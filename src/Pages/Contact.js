@@ -63,7 +63,7 @@ function Contact() {
               <textarea className="form-control" placeholder="Your message" value={message} onChange={e => setMessage(e.target.value)}></textarea>
             </div>
             <button type="submit" className="btn btn-dark">Submit</button>
-           </form>
+           </form><br/>
            {emailSent?<p className="lead text-center">We have received your email, We'll get back to you soon!</p>:<p></p>}
           </div>
         </div>
