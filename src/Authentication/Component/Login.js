@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import UserService from './../Service/UserService';
 import JwtRequest from './../Model/AppUser';
-import Navbar from "../../Layout/Component/NavBar";
+// import Navbar from "../../Layout/Component/NavBar";
 
 function Login() {
     const [user, setUser] = useState({ login: new JwtRequest() });
@@ -10,7 +10,6 @@ function Login() {
     let service = new UserService();
     return (
         <div>
-            <Navbar/>
             <h1>Login Page</h1>
             <form>
                 <div className="form-group">
@@ -47,10 +46,11 @@ function Login() {
                             service
                                 .login(user.login)
                                 .then((result) => {
-                                    alert(JSON.stringify(result));
+                                    // alert(JSON.stringify(result));
                                     sessionStorage.setItem('currentUser',JSON.stringify(result));
-                                    sessionStorage.setItem("username", user.login.username);
-                                    navigate("/home");
+                                    console.log(sessionStorage.getItem('currentUser'));
+                                    // sessionStorage.setItem("username", user.login.username);
+                                    navigate("/homeLoggedIn");
                                 })
                                 .catch((error) => {
                                     //alert(error.message);
