@@ -3,8 +3,12 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {LinkContainer} from 'react-router-bootstrap';
 // import Button from 'react-bootstrap/Button';
+import { useNavigate } from 'react-router';
+import Register from "../../Authentication/Component/Register";
+
 
 const NavBar = (props) => {
+  const navigate = useNavigate();
   return (
     <Navbar bg="transparent" expand="lg" variant="light">
       <LinkContainer to={"/"}>
@@ -24,52 +28,14 @@ const NavBar = (props) => {
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>
-        <button type="button" className="btn btn-outline-dark float-right">Get Started</button>
+        <button type="button" 
+        className="btn btn-outline-dark float-right" 
+        onClick={()=>navigate('/register')}>Get Started</button>
+        {/* <button type="button" 
+        className="btn btn-outline-dark float-right" 
+        onClick={()=>{<Register/>}}>Get Started</button> */}
     </Navbar>
   );
 };
-// const Main = (props) => {
-//   return (
-//     <Container className="mt-4">
-//       <Switch>
-//         <Route exact path="/stuff" component={Stuff} />
-//         <Route exact path="/contact" component={Contact} />
-//         <Route path="/class" component={Class} />
-//         <Route path="/" component={Home} />
-//       </Switch>
-//     </Container>
-//   );
-// };
-
-// function NavBar() {
-//     return (
-//         <Navbar inverse collapseOnSelect>
-//             <Navbar.Header>
-//                 <Navbar.Brand>
-//                     <a href="#brand">React-Bootstrap</a>
-//                 </Navbar.Brand>
-//                 <Navbar.Toggle />
-//             </Navbar.Header>
-//             <Navbar.Collapse>
-//                 <Nav>
-//                     <NavItem eventKey={1} href="#">
-//                         Link
-//                     </NavItem>
-//                     <NavItem eventKey={2} href="#">
-//                         Link
-//                     </NavItem>
-//                 </Nav>
-//                 <Nav pullRight>
-//                     <NavItem eventKey={1} href="#">
-//                         Link Right
-//                     </NavItem>
-//                     <NavItem eventKey={2} href="#">
-//                         Link Right
-//                     </NavItem>
-//                 </Nav>
-//             </Navbar.Collapse>
-//         </Navbar>
-//     )
-// }
 
 export default NavBar;
