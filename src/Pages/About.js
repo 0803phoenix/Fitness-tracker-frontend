@@ -19,118 +19,134 @@ class About extends Component {
   }
 
   render() {
-    const myStyle = {
-      backgroundImage:
-        "url('https://t3.ftcdn.net/jpg/02/97/91/38/360_F_297913876_pxLCVBrLEyznyqdHvNpKmNRPvYWoqlEW.jpg')",
-      fontSize: "20px",
-      backgroundSize: "cover",
-      backgroundRepeat: "no-repeat",
-    };
-
     return (
-      <div style={myStyle}>
+      <div>
         <NavBar />
-
-        <Card
-          text={"light"}
-          // style={{ width: "100%" }}
-          className=" text-white px-md-5 py-md-5 my-md-5 mx-md-5 "
+        <div
+          className="p-5"
+          style={{
+            backgroundImage: `url(https://source.unsplash.com/1400x500/?nutrition)`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
         >
-          <Card.Img src="https://picsum.photos/1200/300" alt="Card image" />
-          <Card.ImgOverlay>
-            <Card.Text className="px-md-5 py-md-5">
-              <h2>Who are we?</h2>A content marketing strategy is a roadmap that
-              not only tells you what you're going to create, but how you're
-              going to create it, distribute it, and ultimately use it to
-              attract, retain, and convert readers and viewers into customers.
-              Each part of your content marketing has its own unique nuances and
-              details that you won't want to miss. So, let's look at each part
-              of the process and for an even deeper dive on how I personally do
-              content marketing for companies like LinkedIn, Google, Zendesk,
-              Quickbooks, Adobe and more, check out my guide to creating a
-              content marketing strategy.
-            </Card.Text>
-            <Card.Text className="px-md-5"></Card.Text>
-          </Card.ImgOverlay>
-        </Card>
+          <Card className=" text-dark my-md-5 mx-md-5">
+            <Card.Img
+              src="https://t3.ftcdn.net/jpg/02/82/71/12/360_F_282711281_WGbatL1zECbAkMFQJUYcjiJ6bzORQ4kn.jpg"
+              alt="Card image"
+              className="rounded"
+              height="250"
+            />
+            <Card.ImgOverlay>
+              <Card.Text className="">
+                <h2 className="display-4">Who are we?</h2>
+                <br />
+                We are a group of engineers working together to help people
+                achiece their fitness goals. Out team members are highly
+                experienced and strive to provide seamless services to our app
+                users.
+              </Card.Text>
+              <Card.Text className="px-md-5"></Card.Text>
+            </Card.ImgOverlay>
+          </Card>
 
-        <Card
-          text={"light"}
-          // style={{ width: "100%" }}
-          className=" text-white px-md-5 py-md-5 my-md-5 mx-md-5 "
-        >
-          <Card.Img src="https://picsum.photos/1200/300" alt="Card image" />
-          <Card.ImgOverlay>
-            <Card.Text className="px-md-5 py-md-5">
-              <h2>Why use Fitness Tracker?</h2>
-              As you age, it’s important to protect your bones, joints, and
-              muscles – they support your body and help you move. Keeping bones,
-              joints, and muscles healthy can help ensure that you’re able to do
-              your daily activities and be physically active. As you age, it’s
-              important to protect your bones, joints, and muscles – they
-              support your body and help you move. Keeping bones, joints, and
-              muscles healthy can help ensure that you’re able to do your daily
-              activities and be physically active.
-            </Card.Text>
-            <Card.Text className="px-md-5"></Card.Text>
-          </Card.ImgOverlay>
-        </Card>
+          <Card
+            // style={{ width: "100%" }}
+            className=" text-dark my-md-5 mx-md-5"
+          >
+            <Card.Img
+              src="https://i.pinimg.com/564x/f4/ec/46/f4ec463a4169ce72a3c6ff28e2af8f23.jpg"
+              alt="Card image"
+              height="300"
+            />
+            <Card.ImgOverlay>
+              <Card.Text className="">
+                <h2 className="display-4">Why use Fitness Tracker?</h2>
+                <br />
+                As you age, it’s important to protect your bones, joints, and
+                muscles – they support your body and help you move. Keeping
+                bones, joints, and muscles healthy can help ensure that you’re
+                able to do your daily activities and be physically active. As
+                you age, it’s important to protect your bones, joints, and
+                muscles – they support your body and help you move. Keeping
+                bones, joints, and muscles healthy can help ensure that you’re
+                able to do your daily activities and be physically active.
+              </Card.Text>
+              <Card.Text className="px-md-5"></Card.Text>
+            </Card.ImgOverlay>
+          </Card>
 
-        <ReactCardFlip
-          isFlipped={this.state.isFlipped}
-          flipDirection="horizontal"
-        >
-          <frontContainer>
-            <Card
-              text={"light"}
-              // style={{ width: "70%" }}
-              className=" text-white px-md-5 py-md-5 my-md-5 mx-md-5 "
-            >
-              <Card.Img src="https://picsum.photos/1200/300" alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Text className="px-md-5 py-md-5">
-                  <h3>Want to know more about us or reach us?</h3>
-                </Card.Text>
-                <Card.Text className="px-md-5"></Card.Text>
-                <img
-                  src="./images/arrow.png"
-                  alt="arrow.png"
-                  onClick={this.handleClick}
-                >
-                  {/* <button onClick={this.handleClick}></button> */}
-                </img>
-              </Card.ImgOverlay>
-            </Card>
-          </frontContainer>
+          <ReactCardFlip
+            isFlipped={this.state.isFlipped}
+            flipDirection="horizontal"
+          >
+            <frontContainer>
+              <Card
+                onClick={this.handleClick}
+                className=" text-dark my-md-5 mx-md-5"
+              >
+                <Card.Img
+                  src="https://t4.ftcdn.net/jpg/01/28/10/83/360_F_128108370_hfp3ZKkBdPHhPPKLy5QEm0hmyXiRASSh.jpg"
+                  alt="Card image"
+                  height="300"
+                />
+                <Card.ImgOverlay>
+                  <Card.Text className="">
+                    <h2 className="display-4 p-5">
+                      Want to connect to us or reach us?
+                    </h2>
+                  </Card.Text>
+                </Card.ImgOverlay>
+              </Card>
+            </frontContainer>
 
-          <backContainer>
-            <Card
-              text={"light"}
-              // style={{ width: "70%" }}
-              className=" text-white px-md-5 py-md-5 my-md-5 mx-md-5 "
-            >
-              <Card.Img src="https://picsum.photos/1200/300" alt="Card image" />
-              <Card.ImgOverlay>
-                <Card.Text className="px-md-5 py-md-5">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
-                  do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  Lorem ipsum dolor sit amet. Sed elementum tempus egestas sed
-                  sed. Id cursus metus aliquam eleifend mi in nulla posuere
-                  sollicitudin. Semper eget duis at tellus at.
-                </Card.Text>
-                <Card.Text className="px-md-5"></Card.Text>
-                <img
-                  src="./images/arrow.png"
-                  alt="arrow.png"
-                  onClick={this.handleClick}
-                >
-                  {/* <button onClick={this.handleClick}></button> */}
-                </img>
-              </Card.ImgOverlay>
-            </Card>
-          </backContainer>
-        </ReactCardFlip>
-
+            <backContainer>
+              <Card className=" text-dark my-md-5 mx-md-5">
+                <Card.Img
+                  src="https://t4.ftcdn.net/jpg/01/28/10/83/360_F_128108370_hfp3ZKkBdPHhPPKLy5QEm0hmyXiRASSh.jpg"
+                  alt="Card image"
+                  height="300"
+                />
+                <Card.ImgOverlay>
+                  <Card.Text className="">
+                    <a href="https://google.com">
+                      <img
+                        className="m-5"
+                        src="https://www.edigitalagency.com.au/wp-content/uploads/new-linkedin-logo-white-black-png.png"
+                        height="50"
+                      />
+                    </a>
+                    <a href="https://google.com">
+                      <img
+                        className="m-5"
+                        src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-512.png"
+                        height="60"
+                      />
+                    </a>
+                    <a href="https://google.com">
+                      <img
+                        className="m-5"
+                        src="https://cdn-icons-png.flaticon.com/512/87/87390.png"
+                        height="50"
+                      />
+                    </a>
+                    <a href="https://google.com">
+                      <img
+                        className="m-5"
+                        src="https://pngimg.com/uploads/twitter/twitter_PNG1.png"
+                        height="50"
+                      />
+                    </a>
+                    <br />
+                    <button type="button" className="btn btn-outline-dark">
+                      Directly reach us!
+                    </button>
+                  </Card.Text>
+                </Card.ImgOverlay>
+              </Card>
+            </backContainer>
+          </ReactCardFlip>
+        </div>
         <Footer />
       </div>
     );
