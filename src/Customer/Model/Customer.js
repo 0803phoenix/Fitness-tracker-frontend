@@ -1,10 +1,10 @@
 class Customer {
     userEmail='';
-	gender='';
-	bodyType='';
-	weight='';
-	height='';
-	age='';
+	gender='MALE';
+	bodyType='ENDOMORPH';
+	weight=0;
+	height=0;
+	age=0;
 	active='';
 	firstName='';
 	lastName='';

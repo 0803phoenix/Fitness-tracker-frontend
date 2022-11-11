@@ -1,11 +1,26 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import DietService from "../Service/DietService";
+import DietTable from "./DietTable";
 
 const DietCards = () => {
-    
+    const[diet,setDiet]=useState([]);
+    const navigate = useNavigate(); 
+    let service = new DietService;
+    const viewDiet = () =>{
+        service
+        .getDiets()
+        .then((result)=>{
+            setDiet(result);
+        }).catch((error)=>{
+            alert(error);
+        });
+
+    }
     return (
      <> 
       <div className="card-group px-1 py-1" >
-      <div className="card bg-dark text-white m-1">
+      <div className="card bg-dark text-white m-1" onClick={viewDiet}>
         <img className="card-img" src="https://source.unsplash.com/1400x500/?food" style={{filter: "brightness(50%)"}} alt="Card image"/>
             <div className="card-img-overlay" style={
             {
@@ -32,6 +47,7 @@ const DietCards = () => {
             </div>
       </div>
       </div>
+      {/* <DietTable/> */}
      </>  
     );
   }
