@@ -6,45 +6,45 @@ import Modal from "react-bootstrap/Modal";
 import CustomerService from "../Service/CustomerService";
 
 function CustomerDetails() {
-  const [userDetails, setUserDetails] = useState({ details: new Customer() });
+  const [userDetails, setUserDetails] = useState(new Customer());
   const navigate = useNavigate();
   let service = new CustomerService();
 
-  const handleFirstName = (e)=>{
-    setUserDetails({details: {...userDetails, firstName: e.target.value }});
+  const handleFirstName = (e) => {
+    setUserDetails({ ...userDetails, firstName: e.target.value });
   }
-  const handleLastName = (e)=>{
-    setUserDetails({details: {...userDetails, lastName: e.target.value }});
+  const handleLastName = (e) => {
+    setUserDetails({ ...userDetails, lastName: e.target.value });
   }
-  const handleEmail = (e)=>{
-    setUserDetails({details: {...userDetails, email: e.target.value }});
+  const handleEmail = (e) => {
+    setUserDetails({ ...userDetails, userEmail: e.target.value });
   }
-  const handleGender = (e)=>{
-    setUserDetails({details: {...userDetails, gender: e.target.value }});
+  const handleGender = (e) => {
+    alert(e.target.value);
+    setUserDetails({ ...userDetails, gender: e.target.value });
   }
-  const handleBodyType = (e)=>{
-    setUserDetails({details: {...userDetails, bodyType: e.target.value }});
+  const handleBodyType = (e) => {
+    setUserDetails({ ...userDetails, bodyType: e.target.value });
   }
-  const handleActivityStatus = (e)=>{
-    setUserDetails({details: {...userDetails, active: e.target.value }});
+  const handleActivityStatus = (e) => {
+    setUserDetails({ ...userDetails, active: e.target.value });
   }
-  const handleWeight = (e)=>{
-    setUserDetails({details: {...userDetails, weight: e.target.value }});
+  const handleWeight = (e) => {
+    setUserDetails({ ...userDetails, weight: e.target.value });
   }
-  const handleHeight = (e)=>{
-    setUserDetails({details: {...userDetails, height: e.target.value }});
+  const handleHeight = (e) => {
+    setUserDetails({ ...userDetails, height: e.target.value });
   }
-  const handleAge = (e)=>{
-    setUserDetails({details: {...userDetails, age: e.target.value }});
+  const handleAge = (e) => {
+    setUserDetails({ ...userDetails, age: e.target.value });
   }
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
-    service.customer(userDetails.details)
-    .then((result)=>{
-      console.log(JSON.stringify(result));
-      navigate("/homeLoggedIn");
-    })
+    service.addCustomer(userDetails)
+      .then((result) => {
+        navigate("/homeLoggedIn");
+      })
   }
 
   return (
@@ -61,8 +61,9 @@ function CustomerDetails() {
               <input
                 className="form-control"
                 type="text"
+                name="firstName"
                 placeholder="Enter your first name"
-                value={userDetails.details.firstName}
+                value={userDetails.firstName}
                 onChange={handleFirstName}
               />
             </div>
@@ -71,8 +72,9 @@ function CustomerDetails() {
               <input
                 className="form-control"
                 type="text"
+                name="lastName"
                 placeholder="Enter your last name"
-                value={userDetails.details.lastName}
+                value={userDetails.lastName}
                 onChange={handleLastName}
               />
             </div>
@@ -81,17 +83,18 @@ function CustomerDetails() {
               <input
                 className="form-control"
                 type="email"
+                name="userEmail"
                 placeholder="Enter your email"
-                value={userDetails.details.userEmail}
+                value={userDetails.userEmail}
                 onChange={handleEmail}
               />
             </div>
             <div className="form-group">
               <label >Gender</label>
-              <select class="form-control" value={userDetails.details.gender} onChange={handleGender}>
-                <option>Male</option>
-                <option>Female</option>
-                <option>Others</option>
+              <select className="form-control" name="gender" value={userDetails.gender} onChange={handleGender}>
+                <option value="MALE">MALE</option>
+                <option value="FEMALE">FEMALE</option>
+                {/* <option value="OTHERS">Others</option> */}
               </select>
             </div>
             <div className="form-group">
@@ -99,8 +102,9 @@ function CustomerDetails() {
               <input
                 className="form-control"
                 type="number"
+                name="weight"
                 placeholder="Enter your Weight"
-                value={userDetails.details.weight}
+                value={userDetails.weight}
                 onChange={handleWeight}
               />
             </div>
@@ -108,9 +112,10 @@ function CustomerDetails() {
               <label>Height in cm</label>
               <input
                 className="form-control"
-                type="number"               
+                type="number"
+                name="height"
                 placeholder="Enter your Height"
-                value={userDetails.details.height}
+                value={userDetails.height}
                 onChange={handleHeight}
               />
             </div>
@@ -119,31 +124,32 @@ function CustomerDetails() {
               <input
                 className="form-control"
                 type="number"
+                name="age"
                 placeholder="Enter your age"
-                value={userDetails.details.age}
+                value={userDetails.age}
                 onChange={handleAge}
               />
             </div>
             <div className="form-group">
               <label >Body Type</label>
-              <select class="form-control" value={userDetails.details.bodyType} onChange={handleBodyType}>
-                <option>ENDOMORPH</option>
-                <option>EXOMORPH</option>
-                <option>MESOMORPH</option>
+              <select className="form-control" name="bodyType" value={userDetails.bodyType} onChange={handleBodyType}>
+                <option value="ENDOMORPH">ENDOMORPH</option>
+                <option value="EXOMORPH">EXOMORPH</option>
+                <option value="MESOMORPH">MESOMORPH</option>
               </select>
             </div>
             <div className="form-group">
               <label >Active Status</label>
-              <select class="form-control" value={userDetails.details.active} onChange={handleActivityStatus}>
-                <option>True</option>
-                <option>false</option>
+              <select className="form-control" name="active" value={userDetails.active} onChange={handleActivityStatus}>
+                <option value={true}>True</option>
+                <option value={false}>false</option>
               </select>
             </div>
           </form>
         </Modal.Body>
 
         <Modal.Footer>
-          <Button variant="secondary" onClick={handleSubmit}>
+          <Button variant="success" onClick={handleSubmit}>
             save
           </Button>
         </Modal.Footer>

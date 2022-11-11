@@ -17,7 +17,7 @@ function HomeCarouselLoggedIn() {
             <h3>First slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
             <button
-              onClick={() => navigate("/mainActivity")}
+              onClick={() => navigate("/activity")}
               class="btn btn-danger mr-1"
             >
               Activity
@@ -37,7 +37,7 @@ function HomeCarouselLoggedIn() {
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
             <button
-              onClick={() => navigate("/mainActivity")}
+              onClick={() => navigate("/activity")}
               class="btn btn-danger mr-1"
             >
               Activity
@@ -59,12 +59,12 @@ function HomeCarouselLoggedIn() {
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
             <button
-              onClick={() => navigate("/mainActivity")}
+              onClick={() => navigate("/activity")}
               class="btn btn-danger mr-1"
             >
               Activity
             </button>
-            <button class="btn btn-primary mr-1">Diet</button>
+            <button class="btn btn-primary mr-1">Add Diet</button>
             <button class="btn btn-success mr-1">Get Report</button>
           </Carousel.Caption>
         </Carousel.Item>
