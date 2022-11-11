@@ -7,9 +7,10 @@ import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import HomeLoggedIn from './Pages/HomeLoggedIn';
+
+import Diet from './Pages/Diet';
 import Register from './Authentication/Component/Register';
 import CustomerDetails from './Customer/Component/CustomerDetails';
-
 
 
 function App() {
@@ -26,6 +27,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/customerList" element={<CustomerList />} />
+          <Route path="/diet" element={<Diet/>}/>
         </Routes>
       </Router>
     </div>
