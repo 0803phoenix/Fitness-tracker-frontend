@@ -9,6 +9,7 @@ import Contact from "./Pages/Contact";
 import HomeLoggedIn from "./Pages/HomeLoggedIn";
 import Register from "./Authentication/Component/Register";
 import CustomerDetails from "./Customer/Component/CustomerDetails";
+import Diet from "./Pages/Diet";
 import AcitvityMain from "./Activity/Component/ActivityMain";
 import GetActivity from "./Activity/Component/GetActivity";
 
@@ -28,6 +29,7 @@ function App() {
           <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
           <Route path="/customerList" element={<CustomerList />} />
+          <Route path="/diet" element={<Diet />} />
         </Routes>
       </Router>
     </div>
