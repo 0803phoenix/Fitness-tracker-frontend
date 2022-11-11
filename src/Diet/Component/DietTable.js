@@ -5,7 +5,6 @@ import Table from '../../Layout/Component/Table';
 import { useState} from 'react';
 
 function DietTable() {
-  
    
     return (
       <>Diet Table</>
