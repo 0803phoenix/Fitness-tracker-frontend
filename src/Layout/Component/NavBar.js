@@ -1,11 +1,10 @@
 import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
-import {LinkContainer} from 'react-router-bootstrap';
+import { LinkContainer } from "react-router-bootstrap";
 // import Button from 'react-bootstrap/Button';
-import { useNavigate } from 'react-router';
+import { useNavigate } from "react-router";
 import Register from "../../Authentication/Component/Register";
-
 
 const NavBar = (props) => {
   const navigate = useNavigate();
@@ -28,10 +27,14 @@ const NavBar = (props) => {
           </LinkContainer>
         </Nav>
       </Navbar.Collapse>
-        <button type="button" 
-        className="btn btn-outline-dark float-right" 
-        onClick={()=>navigate('/register')}>Get Started</button>
-        {/* <button type="button" 
+      <button
+        type="button"
+        className="btn btn-outline-dark float-right"
+        onClick={() => navigate("/register")}
+      >
+        Get Started
+      </button>
+      {/* <button type="button" 
         className="btn btn-outline-dark float-right" 
         onClick={()=>{<Register/>}}>Get Started</button> */}
     </Navbar>

@@ -1,115 +1,38 @@
 import React, { Component } from "react";
-import {
-  Typography,
-  TextField,
-  Divider,
-  FormControl,
-  InputLabel,
-  Select,
-  MenuItem,
-  Button,
-} from "@material-ui/core";
-import axios from "axios";
+import Carousel from "react-bootstrap/Carousel";
+import Card from "react-bootstrap/Card";
+import NavBar from "../../Layout/Component/NavBar";
+import Footer from "./../../Layout/Component/Footer";
 
-export default class CreateExercise extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      username: "",
-      description: "",
-      duration: "",
-      date: "2019-01-01T10:30",
-      users: [],
-    };
-  }
-
-  componentDidMount() {
-    axios.get("http://localhost:5000/users").then((res) => {
-      if (res.data.length > 0) {
-        this.setState({
-          users: res.data.map((user) => user.username),
-          username: res.data[0].username,
-        });
-      }
-    });
-  }
-
-  onChange = (e) => {
-    this.setState({
-      [e.target.name]: e.target.value,
-    });
-  };
-
-  onSubmit = (e) => {
-    e.preventDefault();
-    const exercise = {
-      username: this.state.username,
-      description: this.state.description,
-      duration: this.state.duration,
-      date: this.state.date,
-    };
-
-    axios
-      .post("http://localhost:5000/exercises/add", exercise)
-      .then((res) => console.log(res.data));
-
-    window.location = "/";
-  };
-
+class AddActivity extends Component {
+  state = {};
   render() {
     return (
-      <React.Fragment>
-        <Typography>Enter Activity Details</Typography>
-        <Divider style={{ margin: "20px 0px" }} />
-        <FormControl>
-          <InputLabel>User</InputLabel>
-          <Select
-            name="username"
-            value={this.state.username}
-            onChange={this.onChange}
-          >
-            {this.state.users.map((user) => {
-              return <MenuItem value={user}>{user}</MenuItem>;
-            })}
-          </Select>
-        </FormControl>
-        <br />
-        <TextField
-          name="description"
-          value={this.state.description}
-          onChange={this.onChange}
-          label="Description"
-          margin="normal"
-        />
-        <br />
-        <TextField
-          name="duration"
-          value={this.state.duration}
-          onChange={this.onChange}
-          label="Duration"
-          margin="normal"
-        />
-        <br />
-        <TextField
-          name="date"
-          type="datetime-local"
-          defaultValue={this.state.date}
-          onChange={this.onChange}
-          margin="normal"
-        />
-        <br />
-        <Button
-          variant="contained"
-          style={{
-            margin: "20px 0px",
-            backgroundColor: "#6c7b95",
-            color: "white",
-          }}
-          onClick={this.onSubmit}
-        >
-          Create
-        </Button>
-      </React.Fragment>
+      <div>
+        <NavBar />
+
+        <Card className=" text-dark my-md-5 mx-md-5">
+          <Card.Img
+            src="https://t3.ftcdn.net/jpg/02/82/71/12/360_F_282711281_WGbatL1zECbAkMFQJUYcjiJ6bzORQ4kn.jpg"
+            alt="Card image"
+            className="rounded"
+            height="250"
+          />
+          <Card.ImgOverlay>
+            <Card.Text className="">
+              <h2 className="display-4">Who are we?</h2>
+              <br />
+              We are a group of engineers working together to help people
+              achiece their fitness goals. Out team members are highly
+              experienced and strive to provide seamless services to our app
+              users.
+            </Card.Text>
+            <Card.Text className="px-md-5"></Card.Text>
+          </Card.ImgOverlay>
+        </Card>
+      </div>
     );
   }
 }
+
+export default AddActivity;

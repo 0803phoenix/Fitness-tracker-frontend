@@ -1,7 +1,9 @@
-import React from 'react'
-import  Carousel  from 'react-bootstrap/Carousel';
+import React from "react";
+import Carousel from "react-bootstrap/Carousel";
+import { useNavigate } from "react-router";
 
 function HomeCarouselLoggedIn() {
+  const navigate = useNavigate();
   return (
     <>
       <Carousel fade>
@@ -14,7 +16,12 @@ function HomeCarouselLoggedIn() {
           <Carousel.Caption>
             <h3>First slide label</h3>
             <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-            <button class="btn btn-danger mr-1">Add Activity</button>
+            <button
+              onClick={() => navigate("/mainActivity")}
+              class="btn btn-danger mr-1"
+            >
+              Activity
+            </button>
             <button class="btn btn-primary mr-1">Add Diet</button>
             <button class="btn btn-success mr-1">Get Report</button>
           </Carousel.Caption>
@@ -29,7 +36,12 @@ function HomeCarouselLoggedIn() {
           <Carousel.Caption>
             <h3>Second slide label</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-            <button class="btn btn-danger mr-1">Add Activity</button>
+            <button
+              onClick={() => navigate("/mainActivity")}
+              class="btn btn-danger mr-1"
+            >
+              Activity
+            </button>
             <button class="btn btn-primary mr-1">Add Diet</button>
             <button class="btn btn-success mr-1">Get Report</button>
           </Carousel.Caption>
@@ -46,14 +58,19 @@ function HomeCarouselLoggedIn() {
             <p>
               Praesent commodo cursus magna, vel scelerisque nisl consectetur.
             </p>
-            <button class="btn btn-danger mr-1">Add Activity</button>
-            <button class="btn btn-primary mr-1">Add Diet</button>
+            <button
+              onClick={() => navigate("/mainActivity")}
+              class="btn btn-danger mr-1"
+            >
+              Activity
+            </button>
+            <button class="btn btn-primary mr-1">Diet</button>
             <button class="btn btn-success mr-1">Get Report</button>
           </Carousel.Caption>
         </Carousel.Item>
       </Carousel>
     </>
-  )
+  );
 }
 
-export default HomeCarouselLoggedIn
+export default HomeCarouselLoggedIn;
