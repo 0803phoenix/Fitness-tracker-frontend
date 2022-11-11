@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 const DietCards = () => {
-    const[diet,setDiet] =useState(false);
+    
     return (
      <> 
       <div className="card-group px-1 py-1" >

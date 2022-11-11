@@ -11,7 +11,7 @@ function Diet() {
       <NavBar/>  
       <HeroImage src= "https://source.unsplash.com/1400x500/?meal" title="Keep Track of Your Diets" text=""/>
       <div className="card p-5">
-            <h1 className="display-4">Get Diet Reccomendations!</h1>
+            <h1 className="display-4">Get Diet Recommendations!</h1>
             <div className="card-body">
               <p className="lead text-justify" ></p>
                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. 
