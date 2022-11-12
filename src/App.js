@@ -11,6 +11,7 @@ import HomeLoggedIn from './Pages/HomeLoggedIn';
 import Diet from './Pages/Diet';
 import Register from './Authentication/Component/Register';
 import CustomerDetails from './Customer/Component/CustomerDetails';
+import Report from './Pages/Report';
 
 
 function App() {
@@ -28,6 +29,8 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/customerList" element={<CustomerList />} />
           <Route path="/diet" element={<Diet/>}/>
+          <Route path="/report" element={<Report/>}/>
+
         </Routes>
       </Router>
     </div>
