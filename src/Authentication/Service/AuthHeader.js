@@ -4,7 +4,7 @@ export default function AuthHeader() {
     // for Node.js Express back-end
     // alert(signature);
     // alert(signature.token);
-    return { Authorization: 'Bearer ' + signature.token };
+    return { Authorization: 'Bearer ' + signature.token};
   } else {
     return {};
   }
