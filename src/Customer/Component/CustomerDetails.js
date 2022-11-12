@@ -20,7 +20,7 @@ function CustomerDetails() {
     setUserDetails({...userDetails, userEmail: e.target.value });
   }
   const handleGender = (e)=>{
-    alert(e.target.value);
+    // alert(e.target.value);
     setUserDetails({...userDetails, gender: e.target.value });
   }
   const handleBodyType = (e)=>{
