@@ -1,6 +1,5 @@
 export default function AuthHeader() {
   const signature = JSON.parse(sessionStorage.getItem('currentUser'));
-
   if (signature && signature.token) {
     // for Node.js Express back-end
     // alert(signature);
@@ -10,4 +9,5 @@ export default function AuthHeader() {
     return {};
   }
 }
+
 

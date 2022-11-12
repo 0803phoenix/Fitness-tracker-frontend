@@ -18,7 +18,7 @@ class UserService {
         // alert(JSON.stringify(response.data));
         return response.data;
       });
-  }
+
 
   logout() {
     // localStorage.removeItem("user");

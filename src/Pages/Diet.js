@@ -4,6 +4,7 @@ import Footer from "../Layout/Component/Footer";
 import HeroImage from "../Layout/Component/HeroImage";
 import NavBar from "../Layout/Component/NavBar";
 
+
 function Diet() {
   return (
     <>

@@ -21,7 +21,6 @@ function CustomerDetails() {
     setUserDetails({...userDetails, userEmail: e.target.value });
   }
   const handleGender = (e)=>{
-    // alert(e.target.value);
     setUserDetails({...userDetails, gender: e.target.value });
   }
   const handleBodyType = (e)=>{
@@ -38,7 +37,6 @@ function CustomerDetails() {
   }
   const handleAge = (e)=>{
     setUserDetails({...userDetails, age: e.target.value });
-
   }
 
   const handleSubmit = (e) => {
