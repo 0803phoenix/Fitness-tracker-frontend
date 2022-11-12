@@ -7,9 +7,11 @@ import Modal from "react-bootstrap/Modal";
 import NavBar from "./../../Layout/Component/NavBar";
 import Footer from "./../../Layout/Component/Footer";
 import CustomerDetails from "./../../Customer/Component/CustomerDetails";
+import Customer from './../../Customer/Model/Customer';
 
 function Login() {
   const [user, setUser] = useState({ login: new JwtRequest() });
+  const [userDetails, setUserDetails] = useState( new Customer() );
   const navigate = useNavigate();
   let service = new UserService();
 
@@ -18,15 +20,13 @@ function Login() {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  //     const myStyle={
-  //     backgroundImage: 
-  // "url('https://source.unsplash.com/2400x1000/?gym, exercise')",
-  //     height:'100vh',
-  //     marginTop:'-70px',
-  //     // fontSize:'50px',
-  //     backgroundSize: 'cover',
-  //     backgroundRepeat: 'no-repeat',
-  // };
+  const getCustomerDetails = ()=>{
+    service.getCustomer().then((result)=>{
+      setUserDetails(result);
+      console.log(result.status);
+    })
+  }
+
   return (
     <>
       <div className="container">
@@ -89,6 +89,9 @@ function Login() {
                   sessionStorage.setItem("currentUser", JSON.stringify(result));
                   console.log(sessionStorage.getItem("currentUser"));
                   // navigate("/customerDetails");
+                  // alert("Hi");
+                  // getCustomerDetails();
+                  // alert(JSON.stringify(userDetails));
                   handleShow();
                 })
                 .catch((error) => {
