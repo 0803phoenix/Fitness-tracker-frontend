@@ -10,11 +10,12 @@ import HomeLoggedIn from './Pages/HomeLoggedIn';
 import Diet from './Pages/Diet';
 import Register from './Authentication/Component/Register';
 import CustomerDetails from './Customer/Component/CustomerDetails';
-import AdminDashboard from './Admin/Components/AdminDashboard';
-import AcitvityMain from "./Activity/Component/ActivityMain";
-import GetActivity from "./Activity/Component/GetActivity";
+// import AdminDashboard from './Admin/Components/AdminDashboard';
+// import AcitvityMain from "./Activity/Component/ActivityMain";
+// import GetActivity from "./Activity/Component/GetActivity";
 import AddCardio from "./Activity/Component/AddCardio";
-
+import Activity from "./Pages/Activity";
+// import AdminDashboard from './Admin/Components/AdminDashboard';
 
 
 function App() {
@@ -35,6 +36,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/customerList" element={<CustomerList />} />
           <Route path="/diet" element={<Diet />} />
+          {/* <Route path="/admin" element={<AdminDashboard/>}/> */}
         </Routes>
       </Router>
     </div>

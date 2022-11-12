@@ -37,8 +37,8 @@ function AddCardio() {
     e.preventDefault();
     service.addCardio(cardioDetails)
       .then((result) => {
-        navigate("/activity");
-        window.location.reload();
+        navigate("/homeLoggedIn");
+        // window.location.reload();
       })
   }
 

@@ -62,13 +62,13 @@ function Register() {
             onClick={
               (e) => {
                 e.preventDefault();
-                alert(JSON.stringify(user.register));
+                // alert(JSON.stringify(user.register));
                 service
                   .register(user.register)
                   .then((result) => {
-                    console.log("hi")
-                    navigate("/login");
+                    // console.log("hi")
                     sessionStorage.setItem('currentUser', JSON.stringify(result));
+                    navigate("/login");
                   })
                   .catch((error) => {
                     alert("Username already exist");

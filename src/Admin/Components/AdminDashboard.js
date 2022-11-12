@@ -1,9 +1,10 @@
 import React from 'react'
 import { useState } from 'react';
 import Customer from '../../Customer/Model/Customer';
-import BootstrapTable  from 'react-bootstrap-table-next';
+// import BootstrapTable  from 'react-bootstrap-table-next';
 import AdminService from './../Service/AdminService';
 import { useEffect } from 'react';
+import CustomerDetailTable from './CustomerDetailTable';
 
 function AdminDashboard() {
     const [userDetails, setUserDetails] = useState(new Customer());
@@ -16,49 +17,49 @@ function AdminDashboard() {
         setUserDetails(result);
       })
     }
-    const columns=[
-      {
-        dataField:"firstName",
-        text:"First_Name",
-      },
-      {
-        dataField:"lastName",
-        text:"Last_Name"
-      },
-      {
-        dataField:"userEmail",
-        text:"Email"
-      },
-      {
-        dataField:"gender",
-        text:"Gender"
-      },
-      {
-        dataField:"age",
-        text:"Age"
-      },
-      {
-        dataField:"bodyType",
-        text:"Body_Type"
-      },
-      {
-        dataField:"weight",
-        text:"Weight"
-      },
-      {
-        dataField:"height",
-        text:"Height"
-      },
-      {
-        dataField:"active",
-        text:"Status_Active"
-      },
-    ]
+    // const columns=[
+    //   {
+    //     dataField:"firstName",
+    //     text:"First_Name",
+    //   },
+    //   {
+    //     dataField:"lastName",
+    //     text:"Last_Name"
+    //   },
+    //   {
+    //     dataField:"userEmail",
+    //     text:"Email"
+    //   },
+    //   {
+    //     dataField:"gender",
+    //     text:"Gender"
+    //   },
+    //   {
+    //     dataField:"age",
+    //     text:"Age"
+    //   },
+    //   {
+    //     dataField:"bodyType",
+    //     text:"Body_Type"
+    //   },
+    //   {
+    //     dataField:"weight",
+    //     text:"Weight"
+    //   },
+    //   {
+    //     dataField:"height",
+    //     text:"Height"
+    //   },
+    //   {
+    //     dataField:"active",
+    //     text:"Status_Active"
+    //   },
+    // ]
   return (
     <div>
         <button className="btn, btn-primary">Get All Customers</button>
-
-        <BootstrapTable data={userDetails} col={columns}/>
+        <CustomerDetailTable getUserDetail={getUserDetails}/>
+        {/* <BootstrapTable data={userDetails} col={columns}/> */}
     </div>
   )
 }

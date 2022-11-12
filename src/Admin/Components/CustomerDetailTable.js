@@ -16,6 +16,7 @@ function CustomerDetailTable() {
       setUserDetails(result);
     })
   }
+
   return (
     <>
       <div className="container">
