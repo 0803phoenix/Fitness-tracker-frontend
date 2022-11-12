@@ -1,38 +1,61 @@
 import React from 'react'
 import { useNavigate } from "react-router";
-import ActivityService from '../Service/ActivityService';
 import Table from '../../Layout/Component/Table';
 import { useState } from 'react';
+import CardioTable from './CardioTable';
+import WorkoutTable from './WorkoutTable';
+import Cardio from '../Model/Cardio';
+
 
 function ActivityTable(props) {
+
     const columns = [
         {
+            dataField: "activityId",
+            text: "Activity ID",
+        },
+        {
+            dataField: "activityName",
+            text: "Activity Description",
+        },
+        {
             dataField: "date",
-            text: "Date",
+            text: "Date"
         },
         {
-            dataField: "dayOfWeek",
-            text: "Day of Week"
-        },
-        {
-            dataField: "consumeTime",
-            text: "Consume Time"
+            dataField: "caloriesBurned",
+            text: "Calories Burned"
         },
     ]
+
+    const data = [];
+
+
+    const getData = (row) => {
+        data.push(row);
+        return data;
+    }
 
     const expandRow = {
         renderer: row => (
             <div>
-                <p>{`This Expand row is belong to rowKey ${row.id}`}</p>
-                <p>You can render anything here, also you can add additional data on every row object</p>
-                <p>expandRow.renderer callback will pass the origin row object to you</p>
+
+                {row.activityName == "CARDIO" ?
+
+                    <CardioTable data={getData(row)} /> :
+                    <WorkoutTable data={getData(row)} />
+                }
+                {/* <CardioTable data={row} /> */}
+
+
             </div>
         )
     };
 
     return (
-
-        <Table id="dietId" columns={columns} data={props.data} expand={expandRow} />
+        <div>
+            <Table id="activityId" columns={columns} data={props.data} expand={expandRow} />
+        </div>
     )
 }
 

@@ -4,7 +4,7 @@ import { useNavigate } from "react-router";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import WorkoutService from "../Service/WorkoutService";
-import ActivityCards from "../../Layout/Component/ActivityCards";
+import ActivityCards from "./ActivityCards";
 
 function AddWorkout() {
     const [workoutDetails, setworkoutDetails] = useState(new Workout());
@@ -62,17 +62,6 @@ function AddWorkout() {
                             </select>
                         </div>
                         <div className="form-group">
-                            <label>Activity Name</label>
-                            <input
-                                className="form-control"
-                                type="text"
-                                placeholder="description of your activity"
-                                value={workoutDetails.activityName}
-                                onChange={handleActivityName}
-                                required
-                            />
-                        </div>
-                        <div className="form-group">
                             <label>Number of Reps</label>
                             <input
                                 className="form-control"
@@ -107,8 +96,8 @@ function AddWorkout() {
                         <div className="form-group">
                             <label >Success Flag</label>
                             <select class="form-control" value={workoutDetails.succesFlag} onChange={handleSuccesFlag}>
-                                <option>true</option>
                                 <option>false</option>
+                                <option>true</option>
                             </select>
                         </div>
 

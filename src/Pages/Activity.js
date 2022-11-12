@@ -2,7 +2,7 @@ import React from "react";
 import Footer from "../Layout/Component/Footer";
 import NavBarLogout from "../Layout/Component/NavBarLogout";
 import HeroImage from "../Layout/Component/HeroImage";
-import ActivityCards from "../Layout/Component/ActivityCards";
+import ActivityCards from "../Activity/Component/ActivityCards";
 
 function Diet() {
   return (

@@ -62,17 +62,6 @@ function AddCardio() {
               </select>
             </div>
             <div className="form-group">
-              <label>Activity Name</label>
-              <input
-                className="form-control"
-                type="text"
-                placeholder="description of your activity"
-                value={cardioDetails.activityName}
-                onChange={handleActivityName}
-                required
-              />
-            </div>
-            <div className="form-group">
               <label>Distance</label>
               <input
                 className="form-control"
