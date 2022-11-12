@@ -2,11 +2,11 @@ import React, { useState } from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
+// import Button from 'react-bootstrap/Button';
 import { useNavigate } from "react-router";
 import Register from "../../Authentication/Component/Register";
 import Modal from "react-bootstrap/Modal";
 import Login from "../../Authentication/Component/Login";
-// import Login from './../../Authentication/Component/Login';
 
 const NavBar = (props) => {
   const [show, setShow] = useState(false);

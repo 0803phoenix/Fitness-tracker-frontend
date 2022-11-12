@@ -1,8 +1,9 @@
 class Workout {
-    activityName="";
-    caloriesBurned= "";
-    workoutType= "";
-    noOfReps= "";
-    dayOfWeek= "";
-    successFlag= "";
+    activityName = '';
+    caloriesBurned = 0;
+    workoutType = 'CHESTWORKOUT';
+    noOfReps = 0;
+    dayOfWeek = 'MONDAY';
+    successFlag = false;
 }
+export default Workout;

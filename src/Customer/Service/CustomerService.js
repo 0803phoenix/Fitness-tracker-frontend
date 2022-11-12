@@ -1,6 +1,5 @@
 import axios from 'axios'
-import AuthHeader from '../../Authentication/Service/AuthHeader';
-
+import AuthHeader from './../../Authentication/Service/AuthHeader';
 
 class CustomerService {
     addCustomer(userDetails){
