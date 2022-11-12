@@ -13,6 +13,8 @@ import CustomerDetails from './Customer/Component/CustomerDetails';
 import AdminDashboard from './Admin/Components/AdminDashboard';
 import AcitvityMain from "./Activity/Component/ActivityMain";
 import GetActivity from "./Activity/Component/GetActivity";
+import AddCardio from "./Activity/Component/AddCardio";
+
 
 
 function App() {
@@ -23,8 +25,9 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/customerDetails" element={<CustomerDetails />} />
           <Route path="/homeLoggedIn" element={<HomeLoggedIn />} />
-          <Route path="/mainActivity" element={<AcitvityMain />} />
+          <Route path="/activity" element={<Activity />} />
 
+          <Route path="/addCardio" element={<AddCardio />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />

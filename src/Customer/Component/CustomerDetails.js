@@ -6,6 +6,7 @@ import Modal from "react-bootstrap/Modal";
 import CustomerService from "../Service/CustomerService";
 
 function CustomerDetails() {
+
   const [userDetails, setUserDetails] = useState( new Customer() );
   const navigate = useNavigate();
   let service = new CustomerService();
@@ -37,9 +38,10 @@ function CustomerDetails() {
   }
   const handleAge = (e)=>{
     setUserDetails({...userDetails, age: e.target.value });
+
   }
 
-  const handleSubmit = (e)=>{
+  const handleSubmit = (e) => {
     e.preventDefault();
     service.addCustomer(userDetails)
     .then((result)=>{

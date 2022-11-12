@@ -1,5 +1,5 @@
 class Customer {
-    userEmail='';
+  userEmail='';
 	gender='MALE';
 	bodyType='ENDOMORPH';
 	weight=0;
