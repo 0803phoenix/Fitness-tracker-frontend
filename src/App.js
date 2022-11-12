@@ -15,6 +15,7 @@ import CustomerDetails from './Customer/Component/CustomerDetails';
 // import GetActivity from "./Activity/Component/GetActivity";
 import AddCardio from "./Activity/Component/AddCardio";
 import Activity from "./Pages/Activity";
+import AdminDashboard from './Admin/Components/AdminDashboard';
 // import AdminDashboard from './Admin/Components/AdminDashboard';
 
 
@@ -27,7 +28,7 @@ function App() {
           <Route path="/customerDetails" element={<CustomerDetails />} />
           <Route path="/homeLoggedIn" element={<HomeLoggedIn />} />
           <Route path="/activity" element={<Activity />} />
-
+          <Route path="/admin" element={<AdminDashboard/>}/>
           <Route path="/addCardio" element={<AddCardio />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />

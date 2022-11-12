@@ -1,12 +1,13 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Customer from '../../Customer/Model/Customer';
 
 import AdminService from './../Service/AdminService';
 
 function CustomerDetailTable() {
 
-  const [userDetails, setUserDetails] = useState(new Customer());
+  const [userDetails, setUserDetails] = useState(new Customer);
   let service = new AdminService();
   useEffect(() => {
     getUserDetails();

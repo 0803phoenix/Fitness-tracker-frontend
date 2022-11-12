@@ -11,9 +11,9 @@ const DietCards = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const[diet,setDiet]=useState([]);
-    const navigate = useNavigate(); 
     let service = new DietService;
     const viewDiet = () =>{
+        console.log("in view diet");
         service
         .getDiets()
         .then((result)=>{
@@ -56,8 +56,8 @@ const DietCards = () => {
       <Modal show={show} onHide={handleClose}>
         <CreateDiet />
       </Modal>
-      {/* <DietTable/> */}
-      {/* <CreateDiet/> */}
+      <DietTable data={diet}/>
+      
      </>  
     );
   }
