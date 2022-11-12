@@ -1,8 +1,9 @@
 import React from "react";
-import DietCards from "../Diet/Component/DietCards";
+
 import Footer from "../Layout/Component/Footer";
 import HeroImage from "../Layout/Component/HeroImage";
 import NavBar from "../Layout/Component/NavBar";
+import DietCards from './../Diet/Component/DietCards';
 
 
 function Diet() {
