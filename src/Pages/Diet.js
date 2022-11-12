@@ -25,7 +25,7 @@ function Diet() {
           aliquip ex ea commodo consequat.
         </div>
       </div>
-      <DietCards />
+      <DietCards/>
       <Footer />
     </>
   );

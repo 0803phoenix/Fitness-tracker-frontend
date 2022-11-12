@@ -1,21 +1,24 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Customer from '../../Customer/Model/Customer';
 
 // import AdminService from './../Service/AdminService';
 
 function CustomerDetailTable(props) {
 
-  // const [userDetails, setUserDetails] = useState(new Customer());
-  // let service = new AdminService();
-  // useEffect(() => {
-  //   getUserDetails();
-  // }, [])
-  // const getUserDetails = () => {
-  //   service.getAllCustomers().then((result) => {
-  //     setUserDetails(result);
-  //   })
-  // }
+
+  const [userDetails, setUserDetails] = useState(new Customer);
+  let service = new AdminService();
+  useEffect(() => {
+    getUserDetails();
+  }, [])
+  const getUserDetails = () => {
+    service.getAllCustomers().then((result) => {
+      setUserDetails(result);
+    })
+  }
+
 
   return (
     <>

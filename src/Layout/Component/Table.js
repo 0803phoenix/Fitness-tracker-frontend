@@ -4,6 +4,7 @@ import  paginationFactory from 'react-bootstrap-table2-paginator';
 import cellEditFactory,{type} from 'react-bootstrap-table-editor';
 function Table(props) {
   return (
+
     <>
     <BootstrapTable 
     keyField={props.id} 
@@ -14,6 +15,7 @@ function Table(props) {
     hover
     pagination={paginationFactory()}/>
     </>
+
   )
 }
 

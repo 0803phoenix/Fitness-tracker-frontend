@@ -18,6 +18,7 @@ import Activity from "./Pages/Activity";
 import AdminDashboard from './Admin/Components/AdminDashboard';
 
 
+
 function App() {
   return (
     <div className="App">
@@ -27,7 +28,7 @@ function App() {
           <Route path="/customerDetails" element={<CustomerDetails />} />
           <Route path="/homeLoggedIn" element={<HomeLoggedIn />} />
           <Route path="/activity" element={<Activity />} />
-
+          <Route path="/admin" element={<AdminDashboard/>}/>
           <Route path="/addCardio" element={<AddCardio />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -36,7 +37,6 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/customerList" element={<CustomerList />} />
           <Route path="/diet" element={<Diet />} />
-          <Route path="/admin" element={<AdminDashboard/>}/>
         </Routes>
       </Router>
     </div>
