@@ -1,8 +1,6 @@
 import React from 'react'
-import { useNavigate } from "react-router";
-import DietService from '../Service/DietService';
-import Table from '../../Layout/Component/Table';
-import { useState} from 'react';
+import BootstrapTable from 'react-bootstrap-table-next'
+import  paginationFactory from 'react-bootstrap-table2-paginator';
 import MealTable from './MealTable';
 
 function DietTable(props) {
@@ -24,14 +22,22 @@ function DietTable(props) {
     const expandRow = {
       renderer: row => (
         <>
-         <MealTable data={row.mealList}/> 
+          <MealTable data={row.mealList} diet={row.dietId}/> 
+
         </>
       )
     };
 
     return (
      
-      <Table id="dietId" columns={columns} data={props.data} expand={expandRow}/>
+      
+      <BootstrapTable 
+        keyField="dietId" 
+        data={props.data} 
+        columns={columns}
+        expandRow={expandRow} 
+        hover
+        pagination={paginationFactory()}/>
   )
 }
 

@@ -56,8 +56,12 @@ const DietCards = () => {
       <Modal show={show} onHide={handleClose}>
         <CreateDiet />
       </Modal>
-      <DietTable data={diet}/>
-      
+      <div className="card p-5">
+        <div className="card p-3">
+            <DietTable data={diet}/>
+        </div>
+        
+      </div>
      </>  
     );
   }

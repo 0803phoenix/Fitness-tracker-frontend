@@ -20,9 +20,5 @@ class DietService {
             return response.data;
         })
     }
-
-    addFoodItem(){
-        
-    }
 }
 export default DietService;

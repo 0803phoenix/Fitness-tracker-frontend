@@ -12,9 +12,9 @@ function CreateDiet() {
         dayOfWeek: 'SUNDAY',
         consumeTime: 'BREAKFAST',
     });
-    const handleInputs = (e) =>{
-        setCreateDiet( {[e.target.name]: e.target.value} )
-    }
+    // const handleInputs = (e) =>{
+    //     setCreateDiet( {[e.target.name]: e.target.value} )
+    // }
 
     const handleConsume = (e) =>{
         console.log(e.target.value);
@@ -90,4 +90,4 @@ function CreateDiet() {
   )
 }
 
-export default CreateDiet
+export default CreateDiet;

@@ -2,7 +2,6 @@ import React from 'react'
 import { useState } from 'react';
 import AdminService from './../Service/AdminService';
 import { useEffect } from 'react';
-import CustomerDetailTable from './CustomerDetailTable';
 import Table from './../../Layout/Component/Table';
 import HeroImage from '../../Layout/Component/HeroImage';
 
