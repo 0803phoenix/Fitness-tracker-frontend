@@ -11,6 +11,7 @@ import HomeLoggedIn from './Pages/HomeLoggedIn';
 import Diet from './Pages/Diet';
 import Register from './Authentication/Component/Register';
 import CustomerDetails from './Customer/Component/CustomerDetails';
+import AdminDashboard from './Admin/Components/AdminDashboard';
 
 
 function App() {
