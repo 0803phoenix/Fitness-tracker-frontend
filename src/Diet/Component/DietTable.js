@@ -3,12 +3,35 @@ import { useNavigate } from "react-router";
 import DietService from '../Service/DietService';
 import Table from '../../Layout/Component/Table';
 import { useState} from 'react';
+import MealTable from './MealTable';
 
-function DietTable() {
-   
+function DietTable(props) {
+    const columns=[
+      {
+        dataField:"date",
+        text:"Date",
+      },
+      {
+        dataField:"dayOfWeek",
+        text:"Day of Week"
+      },
+      {
+        dataField:"consumeTime",
+        text:"Consume Time"
+      },
+    ]
+
+    const expandRow = {
+      renderer: row => (
+        <>
+         <MealTable data={row.mealList}/> 
+        </>
+      )
+    };
+
     return (
-      <>Diet Table</>
-    // <Table cols={cols} data={rows}/>
+     
+      <Table id="dietId" columns={columns} data={props.data} expand={expandRow}/>
   )
 }
 

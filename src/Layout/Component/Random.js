@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const DietCards = () => {
+const Random = () => {
     
     return (
      <> 
@@ -36,4 +36,4 @@ const DietCards = () => {
     );
   }
   
-  export default DietCards;
+  export default Random;

@@ -1,12 +1,14 @@
 import React from 'react'
 import { useEffect } from 'react';
 import { useState } from 'react';
+import Customer from '../../Customer/Model/Customer';
 
-import AdminService from './../Service/AdminService';
+// import AdminService from './../Service/AdminService';
 
-function CustomerDetailTable() {
+function CustomerDetailTable(props) {
 
-  const [userDetails, setUserDetails] = useState(new Customer());
+
+  const [userDetails, setUserDetails] = useState(new Customer);
   let service = new AdminService();
   useEffect(() => {
     getUserDetails();
@@ -16,6 +18,7 @@ function CustomerDetailTable() {
       setUserDetails(result);
     })
   }
+
 
   return (
     <>
@@ -37,7 +40,7 @@ function CustomerDetailTable() {
             </tr>
           </thead>
           <tbody>
-            {userDetails.map((userDetail, index)=>{
+            {props.userDetails.map((userDetail, index)=>{
               <tr>
                 <th scope="row">{index+1}</th>
                 <td>{userDetail.firstName}</td>

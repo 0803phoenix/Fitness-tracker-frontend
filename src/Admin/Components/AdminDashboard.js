@@ -1,65 +1,90 @@
 import React from 'react'
 import { useState } from 'react';
-import Customer from '../../Customer/Model/Customer';
-// import BootstrapTable  from 'react-bootstrap-table-next';
 import AdminService from './../Service/AdminService';
 import { useEffect } from 'react';
 import CustomerDetailTable from './CustomerDetailTable';
+import Table from './../../Layout/Component/Table';
+import HeroImage from '../../Layout/Component/HeroImage';
 
 function AdminDashboard() {
-    const [userDetails, setUserDetails] = useState(new Customer());
+    const [userDetails, setUserDetails] = useState([]);
     let service = new AdminService();
-    useEffect(()=>{
-      getUserDetails();
-    },[])
+    // useEffect(()=>{
+    //   getUserDetails();
+    // },[])
     const getUserDetails = ()=>{
+      // console.log("Hiii");
       service.getAllCustomers().then((result)=>{
         setUserDetails(result);
+        // console.log(result);
+      }).catch((error)=>{
+        alert("error")
       })
     }
-    // const columns=[
-    //   {
-    //     dataField:"firstName",
-    //     text:"First_Name",
-    //   },
-    //   {
-    //     dataField:"lastName",
-    //     text:"Last_Name"
-    //   },
-    //   {
-    //     dataField:"userEmail",
-    //     text:"Email"
-    //   },
-    //   {
-    //     dataField:"gender",
-    //     text:"Gender"
-    //   },
-    //   {
-    //     dataField:"age",
-    //     text:"Age"
-    //   },
-    //   {
-    //     dataField:"bodyType",
-    //     text:"Body_Type"
-    //   },
-    //   {
-    //     dataField:"weight",
-    //     text:"Weight"
-    //   },
-    //   {
-    //     dataField:"height",
-    //     text:"Height"
-    //   },
-    //   {
-    //     dataField:"active",
-    //     text:"Status_Active"
-    //   },
-    // ]
+    
+    const columns=[
+      {
+        dataField:"userId",
+        text:"User ID",
+        sort:true,
+      },
+      {
+        dataField:"firstName",
+        text:"First_Name",
+        sort:true,
+      },
+      {
+        dataField:"lastName",
+        text:"Last_Name",
+        sort:true,
+      },
+      {
+        dataField:"userEmail",
+        text:"Email",
+        sort:true,
+      },
+      {
+        dataField:"gender",
+        text:"Gender",
+        sort:true,
+      },
+      {
+        dataField:"age",
+        text:"Age",
+        sort:true,
+      },
+      {
+        dataField:"bodyType",
+        text:"Body_Type",
+        sort:true,
+      },
+      {
+        dataField:"weight",
+        text:"Weight",
+        sort:true,
+      },
+      {
+        dataField:"height",
+        text:"Height",
+        sort:true
+      },
+      {
+        dataField:"active",
+        text:"Status_Active",
+        sort:true
+      },
+    ]
   return (
     <div>
-        <button className="btn, btn-primary">Get All Customers</button>
-        <CustomerDetailTable getUserDetail={getUserDetails}/>
-        {/* <BootstrapTable data={userDetails} col={columns}/> */}
+       <HeroImage
+        src="https://source.unsplash.com/1400x500/?fitness"
+        title="Welcome Admin"
+        text="Keep track of your Customers"
+      />
+        <button className="btn, btn-primary" onClick={getUserDetails}>Get All Customers</button>
+        {/* <CustomerDetailTable userDetail={userDetails} getUserDetail={getUserDetails}/> */}
+        {console.log(userDetails)}
+        <Table id='userId' data={userDetails} columns={columns}/>
     </div>
   )
 }
