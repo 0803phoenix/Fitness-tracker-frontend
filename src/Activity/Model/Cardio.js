@@ -4,7 +4,7 @@ class Cardio {
     timeInMinutes = 0;
     dayOfWeek = 'MONDAY';
     succesFlag = false;
-    activityName = '';
+    activityName = 'CARDIO';
     caloriesBurned = 0;
 }
 export default Cardio;

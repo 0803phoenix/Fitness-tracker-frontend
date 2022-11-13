@@ -1,5 +1,5 @@
 class Workout {
-    activityName = '';
+    activityName = 'WORKOUT';
     caloriesBurned = 0;
     workoutType = 'CHESTWORKOUT';
     noOfReps = 0;
