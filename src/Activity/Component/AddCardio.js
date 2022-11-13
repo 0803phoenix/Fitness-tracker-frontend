@@ -14,6 +14,10 @@ function AddCardio() {
     setCardioDetails({ ...cardioDetails, cardioType: e.target.value });
   }
   const handleDistance = (e) => {
+    e.preventDefault();
+    // (cardioDetails.distance > 100) ? (
+    //   setCardioDetails({ ...cardioDetails, distance: e.target.value }))
+    //   : (alert("distance too short"));
     setCardioDetails({ ...cardioDetails, distance: e.target.value });
   }
   const handleTimeInMinutes = (e) => {
@@ -37,8 +41,8 @@ function AddCardio() {
     e.preventDefault();
     service.addCardio(cardioDetails)
       .then((result) => {
-        navigate("/homeLoggedIn");
-        // window.location.reload();
+        navigate("/activity");
+        window.location.reload();
       })
   }
 
@@ -60,17 +64,6 @@ function AddCardio() {
                 <option>CYCLING</option>
                 <option>WALKING</option>
               </select>
-            </div>
-            <div className="form-group">
-              <label>Activity Name</label>
-              <input
-                className="form-control"
-                type="text"
-                placeholder="description of your activity"
-                value={cardioDetails.activityName}
-                onChange={handleActivityName}
-                required
-              />
             </div>
             <div className="form-group">
               <label>Distance</label>
