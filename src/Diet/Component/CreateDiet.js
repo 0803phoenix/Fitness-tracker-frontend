@@ -77,10 +77,9 @@ function CreateDiet() {
                   navigate("/diet");
                   alert("diet added successfully");
                 })
-                .catch((error) => {
-                  console.log(error);  
-                  alert("Unable To add Diet");
-                })
+                .catch((error)=>{
+                  alert(JSON.stringify(error.response.data));
+              })
             }}>
           Create
         </Button>

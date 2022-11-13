@@ -14,7 +14,6 @@ class FoodService {
         return axios.get('http://localhost:9991/fitness/food-items',
         {headers:AuthHeader()})
         .then((response) =>{
-            alert(JSON.stringify(response.data));
             return response.data;
         });
     }
@@ -23,7 +22,6 @@ class FoodService {
         return axios.get(this.getUrl(dietId,foodId),
         {headers:AuthHeader()})
         .then((response)=>{
-            alert(JSON.stringify(response.data));
             return response.data;
         })
     }

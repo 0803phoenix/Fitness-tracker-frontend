@@ -8,6 +8,7 @@ import Modal from "react-bootstrap/Modal";
 const DietCards = () => {
     
     const [show, setShow] = useState(false);
+    const [showTable, setShowTable] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const[diet,setDiet]=useState([]);
@@ -18,6 +19,7 @@ const DietCards = () => {
         .getDiets()
         .then((result)=>{
             setDiet(result);
+            setShowTable(true);
         }).catch((error)=>{
             alert(error);
         });
@@ -56,12 +58,16 @@ const DietCards = () => {
       <Modal show={show} onHide={handleClose}>
         <CreateDiet />
       </Modal>
+      {showTable ?
       <div className="card p-5">
         <div className="card p-3">
             <DietTable data={diet}/>
         </div>
-        
       </div>
+        :
+        null}
+      
+      
      </>  
     );
   }

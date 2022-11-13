@@ -12,6 +12,7 @@ function MealTable(props) {
     const handleClose = () => {
       setShow(false);
       navigate("/diet");
+      window.location.reload();
     }
   
     let service = new FoodService();
@@ -20,7 +21,6 @@ function MealTable(props) {
         service
         .getFoodItems()
         .then((response)=>{
-          console.log(response);
           setFoodItem(response);
           setShow(true);
         }).catch((error)=>{
