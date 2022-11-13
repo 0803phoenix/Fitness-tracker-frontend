@@ -11,22 +11,41 @@ import Customer from './../../Customer/Model/Customer';
 
 function Login() {
   const [user, setUser] = useState({ login: new JwtRequest() });
-  const [userDetails, setUserDetails] = useState( new Customer() );
+  // const [userDetails, setUserDetails] = useState( new Customer() );
   const navigate = useNavigate();
   let service = new UserService();
 
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
 
-  const getCustomerDetails = ()=>{
-    service.getCustomer().then((result)=>{
-      setUserDetails(result);
-      console.log(result.status);
-    })
+  const handleShow = () => {
+    getCustomerDetails();
+    // alert("Inside handleShow");
+    // alert((JSON.parse(sessionStorage.getItem('customerDetails'))).userEmail.length<1);
+    // (JSON.parse(sessionStorage.getItem('customerDetails'))).userEmail.length<1 ?
+    //   setShow(true) : navigate("/homeLoggedIn");
+    
   }
 
+ 
+  const getCustomerDetails = ()=>{
+    // alert("In get Customer Details");
+  
+    service.getCustomer().then((result)=>{
+      if(result==400){
+        // alert("customer details not in backend")
+        setShow(true);
+      }
+      else{
+        
+        sessionStorage.setItem('customerDetails',JSON.stringify(result));
+        navigate("/homeLoggedIn");
+        // alert("Customer details Stored");
+      }
+      
+    })
+  }
   return (
     <>
       <div className="container">
@@ -37,12 +56,10 @@ function Login() {
         backgroundImage:
           "url('https://source.unsplash.com/2400x1000/?gym, exercise')",
         height: '100vh',
-        // marginTop: '-70px',
-        // fontSize:'50px',
+        
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        // opacity:'0.5',
-        // zIndex:'1',
+        
       }}>
         <div className="container w-25 float-center pt-5 " >
           <h1>Login</h1>
@@ -87,11 +104,7 @@ function Login() {
                 .login(user.login)
                 .then((result) => {
                   sessionStorage.setItem("currentUser", JSON.stringify(result));
-                  console.log(sessionStorage.getItem("currentUser"));
-                  // navigate("/customerDetails");
-                  // alert("Hi");
-                  // getCustomerDetails();
-                  // alert(JSON.stringify(userDetails));
+                  // console.log(sessionStorage.getItem("currentUser"));
                   handleShow();
                 })
                 .catch((error) => {

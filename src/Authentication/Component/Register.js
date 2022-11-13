@@ -71,7 +71,7 @@ function Register() {
                     navigate("/login");
                   })
                   .catch((error) => {
-                    alert("Username already exist");
+                    alert(error.response.message);
                   })
               }}>
             Register

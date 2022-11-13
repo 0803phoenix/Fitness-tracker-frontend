@@ -9,12 +9,6 @@ class CustomerService {
             return response.data;
         });
     }
-    getCustomer(){
-        alert("in customer  service");
-        return axios.get('http://localhost:9991/fitness/customer',{headers:AuthHeader()})
-        .then((response)=>{
-            return response.data;
-        })
-    }
+    
 }
 export default CustomerService;

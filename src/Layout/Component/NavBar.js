@@ -11,12 +11,12 @@ import AdminLogin from "../../Authentication/Component/AdminLogin";
 
 const NavBar = (props) => {
   const [show1, setShow1] = useState(false);
-  const [show2, setShow2] = useState(false);
+  // const [show2, setShow2] = useState(false);
  
   const handleClose1 = () => setShow1(false);
-  const handleClose2 = () => setShow2(false);
+  // const handleClose2 = () => setShow2(false);
   const handleShow1 = () => setShow1(true);
-  const handleShow2 = () => setShow2(true);
+  // const handleShow2 = () => setShow2(true);
 
   const navigate = useNavigate();
 
@@ -53,16 +53,6 @@ const NavBar = (props) => {
         <Register />
       </Modal>
 
-      <button
-        type="button"
-        className="btn btn-success float-right mr-3 "
-        onClick={handleShow2}
-      >
-        Admin Login
-      </button>
-      <Modal show={show2} onHide={handleClose2}>
-        <AdminLogin />
-      </Modal>
     </Navbar>
   );
 };
