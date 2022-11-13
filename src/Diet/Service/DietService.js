@@ -7,7 +7,6 @@ class DietService {
         return axios.get('http://localhost:9991/fitness/diets',
         {headers:AuthHeader()})
         .then((response) =>{
-            alert(JSON.stringify(response.data));
             return response.data;
         });
     }
@@ -16,13 +15,8 @@ class DietService {
         return axios.post('http://localhost:9991/fitness/diets',diet,
         {headers:AuthHeader()})
         .then((response)=>{
-            alert(JSON.stringify(response.data));
             return response.data;
         })
-    }
-
-    addFoodItem(){
-        
     }
 }
 export default DietService;

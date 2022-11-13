@@ -12,9 +12,9 @@ function CreateDiet() {
         dayOfWeek: 'SUNDAY',
         consumeTime: 'BREAKFAST',
     });
-    const handleInputs = (e) =>{
-        setCreateDiet( {[e.target.name]: e.target.value} )
-    }
+    // const handleInputs = (e) =>{
+    //     setCreateDiet( {[e.target.name]: e.target.value} )
+    // }
 
     const handleConsume = (e) =>{
         console.log(e.target.value);
@@ -77,10 +77,9 @@ function CreateDiet() {
                   navigate("/diet");
                   alert("diet added successfully");
                 })
-                .catch((error) => {
-                  console.log(error);  
-                  alert("Unable To add Diet");
-                })
+                .catch((error)=>{
+                  alert(JSON.stringify(error.response.data));
+              })
             }}>
           Create
         </Button>
@@ -90,4 +89,4 @@ function CreateDiet() {
   )
 }
 
-export default CreateDiet
+export default CreateDiet;
