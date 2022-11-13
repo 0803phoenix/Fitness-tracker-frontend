@@ -16,6 +16,7 @@ import CustomerDetails from './Customer/Component/CustomerDetails';
 import AddCardio from "./Activity/Component/AddCardio";
 import Activity from "./Pages/Activity";
 import AdminDashboard from './Admin/Components/AdminDashboard';
+import AdminLogin from './Authentication/Component/AdminLogin';
 
 
 
@@ -37,6 +38,7 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/customerList" element={<CustomerList />} />
           <Route path="/diet" element={<Diet />} />
+          <Route path="/adminLogin" element={<AdminLogin/>}/>
         </Routes>
       </Router>
     </div>

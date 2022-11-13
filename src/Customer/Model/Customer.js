@@ -8,5 +8,7 @@ class Customer {
 	active=false;
 	firstName='';
 	lastName='';
+	diet=[];
+	activities=[]
 }
 export default Customer;

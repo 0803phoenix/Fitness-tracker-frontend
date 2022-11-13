@@ -12,5 +12,17 @@ class AdminService{
             return response.data;
         })
     }
+    getCustomerById(username){
+        return axios.get(`http://localhost:9991/fitness/admin/customer/${username}`,
+        {headers:AuthHeader()})
+        .then((response)=>{
+            return response.data;
+        })
+    }
+    deleteCustomerById(username){
+        console.log("In Delete method");
+        return axios.delete(`http://localhost:9991/fitness/admin/customer/${username}`,{headers:AuthHeader()})
+        .then(()=>{console.log("Deleted Successfully")})
+    }
 }
 export default AdminService;
