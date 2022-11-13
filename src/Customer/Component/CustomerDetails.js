@@ -4,12 +4,20 @@ import { useNavigate } from "react-router";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import CustomerService from "../Service/CustomerService";
+import { useForm } from "react-hook-form"
 
 function CustomerDetails() {
 
+  const { register,formState:{errors}, handleSubmit} = useForm();
   const [userDetails, setUserDetails] = useState( new Customer() );
   const navigate = useNavigate();
   let service = new CustomerService();
+  let b1=errors;
+  const onSubmit=(data) => 
+  {
+    //setUserInfo(data);
+    console.log(data);
+  }
 
   const handleFirstName = (e)=>{
     setUserDetails({...userDetails, firstName: e.target.value });
@@ -39,12 +47,15 @@ function CustomerDetails() {
     setUserDetails({...userDetails, age: e.target.value });
   }
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    service.addCustomer(userDetails)
+  const handleSubmitFunc = (e) => {
+    //e.preventDefault();
+    if(!(b1===errors))
+    {
+      service.addCustomer(userDetails)
     .then((result)=>{
       navigate("/homeLoggedIn");
     })
+    }
   }
 
   return (
@@ -55,7 +66,7 @@ function CustomerDetails() {
         </Modal.Header>
 
         <Modal.Body>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <label>First Name</label>
               <input
@@ -63,10 +74,12 @@ function CustomerDetails() {
                 type="text"
                 name="firstName"
                 placeholder="Enter your first name"
+                {...register('firstName',{required:true})}
                 value={userDetails.firstName}
                 onChange={handleFirstName}
               />
             </div>
+            <p style={{color:'red'}}>{errors.firstName?.type==="required" && "First Name is required"}</p>
             <div className="form-group">
               <label>Last Name</label>
               <input
@@ -74,10 +87,12 @@ function CustomerDetails() {
                 type="text"
                 name="lastName"
                 placeholder="Enter your last name"
+                {...register('lastName',{required:true})}
                 value={userDetails.lastName}
                 onChange={handleLastName}
               />
             </div>
+            <p style={{color:'red'}}>{errors.lastName?.type==="required" && "Last Name is required"}</p>
             <div className="form-group">
               <label>Email</label>
               <input
@@ -85,10 +100,16 @@ function CustomerDetails() {
                 type="email"
                 name="userEmail"
                 placeholder="Enter your email"
+                {...register('userEmail',{required:true,
+                pattern:/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i})}
                 value={userDetails.userEmail}
                 onChange={handleEmail}
               />
             </div>
+            <p style={{color:'red'}}>{errors.userEmail?.type==="required" && "Email is required"}
+            <p style={{color:'red'}}>{errors.userEmail?.type==="pattern" && "Enter valid Email"}</p>
+            </p>
+            
             <div className="form-group">
               <label >Gender</label>
               <select className="form-control" name="gender" value={userDetails.gender} onChange={handleGender}>
@@ -104,10 +125,13 @@ function CustomerDetails() {
                 type="number"
                 name="weight"
                 placeholder="Enter your Weight"
+                {...register('weight',{required:true})}
                 value={userDetails.weight}
                 onChange={handleWeight}
               />
             </div>
+            <p style={{color:'red'}}>{errors.weight?.type==="required" && "Weight is required"}</p>
+            
             <div className="form-group">
               <label>Height in cm</label>
               <input
@@ -115,10 +139,13 @@ function CustomerDetails() {
                 type="number" 
                 name="height"              
                 placeholder="Enter your Height"
+                {...register('height',{required:true})}
                 value={userDetails.height}
                 onChange={handleHeight}
               />
             </div>
+            <p style={{color:'red'}}>{errors.height?.type==="required" && "Height is required"}</p>
+            
             <div className="form-group">
               <label>Age</label>
               <input
@@ -126,10 +153,13 @@ function CustomerDetails() {
                 type="number"
                 name="age"
                 placeholder="Enter your age"
+                {...register('age',{required:true})}
                 value={userDetails.age}
                 onChange={handleAge}
               />
             </div>
+            <p style={{color:'red'}}>{errors.age?.type==="required" && "Age is required"}</p>
+            
             <div className="form-group">
               <label >Body Type</label>
               <select className="form-control" name="bodyType" value={userDetails.bodyType} onChange={handleBodyType}>
@@ -145,14 +175,16 @@ function CustomerDetails() {
                 <option value={false}>false</option>
               </select>
             </div>
-          </form>
-        </Modal.Body>
-
-        <Modal.Footer>
-          <Button variant="success" onClick={handleSubmit}>
+            <Modal.Footer>
+          <Button variant="success" onClick={handleSubmitFunc}>
             save
           </Button>
         </Modal.Footer>
+          </form>
+
+        </Modal.Body>
+
+        
       </Modal.Dialog>
     </>
   );

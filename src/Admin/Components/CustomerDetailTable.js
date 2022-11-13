@@ -3,7 +3,7 @@ import { useEffect } from 'react';
 import { useState } from 'react';
 import Customer from '../../Customer/Model/Customer';
 
-// import AdminService from './../Service/AdminService';
+ import AdminService from './../Service/AdminService';
 
 function CustomerDetailTable(props) {
 

@@ -4,10 +4,12 @@ import userDto from "./../Model/UserDto";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import UserService from './../Service/UserService';
+import { useForm } from 'react-hook-form';
 
 function Register() {
-  const [user, setUser] = useState({ register: new userDto() });
-
+  const { register,formState:{errors}, handleSubmit} = useForm();
+  const [user, setUser] = useState({ reg: new userDto() });
+  let b1=errors;
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
@@ -15,7 +17,12 @@ function Register() {
 
   const navigate = useNavigate();
   let service = new UserService();
-
+  const onSubmit=(data) => 
+{
+  //setUserInfo(data);
+  console.log(data);
+}
+  console.log(errors);
   return (
     <>
       <Modal.Dialog>
@@ -24,62 +31,87 @@ function Register() {
         </Modal.Header>
 
         <Modal.Body>
-          <form>
+          <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-group">
               <label>Username</label>
               <input
                 className="form-control"
                 type="text"
                 id="username"
+                name="username"
                 placeholder="Enter User Name"
-                value={user.register.usename}
+                {...register('username',{required:true})}
+                value={user.reg.usename}
+                
                 onChange={(e) =>
-                  setUser({ register: { ...user.register, username: e.target.value } })
+                  setUser({ reg: { ...user.reg, username: e.target.value } })
                 }
               />
+              <p style={{color: "red"}}>{errors.username?.type==="required" && "Username is required"}</p>
             </div>
+           
             <div className="form-group">
               <label>Password</label>
               <input
                 className="form-control"
                 type="password"
+                name="password"
                 id="password"
                 placeholder="Enter Password"
-                value={user.register.password}
+                {...register('password',{required:true,
+                minLength:8,
+                maxLength:14,
+                pattern:/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])(?=.{8,14})/})}
+                value={user.reg.password}
                 onChange={(e) =>
-                  setUser({ register: { ...user.register, password: e.target.value } })
+                  setUser({ reg: { ...user.reg, password: e.target.value }
+                     })
                 }
               />
+              </div>
+              <p style={{color: "red"}}>{errors.password?.type==="required" && "Password is required"}
+              {errors.password?.type==="minLength" && "Length should be between 8 and 14"}
+              {errors.password?.type==="maxLength" && "Length should be between 8 and 14"}
+              </p>
+             
+              <div>
+              <Modal.Footer>
+          <Button variant="success" onClick={() => navigate("/login")}>
+            Already a Member
+          </Button>
+          <Button variant="secondary" type="submit" className="button"
+          onClick={
+            (e) => {
+              //e.preventDefault();
+              // alert(JSON.stringify(user.register));
+              console.log(errors);
+              if(!(b1===errors))
+              {
+                service
+                .registers(user.register)
+                .then((result) => {
+                  // console.log("hi")
+                  sessionStorage.setItem('currentUser', JSON.stringify(result));
+                  navigate("/login");
+                })
+                .catch((error) => {
+                  alert("Username already exist");
+                })
+              }
+            }}
+            >
+            Register
+          </Button>
+        </Modal.Footer>
             </div>
           </form>
         </Modal.Body>
 
-        <Modal.Footer>
-          <Button variant="success" onClick={() => navigate("/login")}>
-            Already a Member
-          </Button>
-          <Button variant="secondary"
-            onClick={
-              (e) => {
-                e.preventDefault();
-                // alert(JSON.stringify(user.register));
-                service
-                  .register(user.register)
-                  .then((result) => {
-                    // console.log("hi")
-                    sessionStorage.setItem('currentUser', JSON.stringify(result));
-                    navigate("/login");
-                  })
-                  .catch((error) => {
-                    alert("Username already exist");
-                  })
-              }}>
-            Register
-          </Button>
-        </Modal.Footer>
+        
       </Modal.Dialog>
     </>
   );
 }
+
 
 export default Register;

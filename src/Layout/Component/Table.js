@@ -1,7 +1,7 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next'
 import  paginationFactory from 'react-bootstrap-table2-paginator';
-import cellEditFactory,{type} from 'react-bootstrap-table-editor';
+//import cellEditFactory,{type} from 'react-bootstrap-table-editor';
 function Table(props) {
   return (
 

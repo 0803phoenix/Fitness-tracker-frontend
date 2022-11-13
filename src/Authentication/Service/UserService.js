@@ -24,7 +24,7 @@ class UserService {
     // localStorage.removeItem("user");
   }
 
-  register(user) {
+  registers(user) {
     return axios
       .post("http://localhost:9991/register", user)
       .then((response) => {
