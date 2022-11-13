@@ -14,6 +14,10 @@ function AddCardio() {
     setCardioDetails({ ...cardioDetails, cardioType: e.target.value });
   }
   const handleDistance = (e) => {
+    e.preventDefault();
+    // (cardioDetails.distance > 100) ? (
+    //   setCardioDetails({ ...cardioDetails, distance: e.target.value }))
+    //   : (alert("distance too short"));
     setCardioDetails({ ...cardioDetails, distance: e.target.value });
   }
   const handleTimeInMinutes = (e) => {
@@ -37,8 +41,8 @@ function AddCardio() {
     e.preventDefault();
     service.addCardio(cardioDetails)
       .then((result) => {
-        navigate("/homeLoggedIn");
-        // window.location.reload();
+        navigate("/activity");
+        window.location.reload();
       })
   }
 

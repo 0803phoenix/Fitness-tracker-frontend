@@ -32,6 +32,7 @@ function ActivityTable(props) {
 
 
     const getData = (row) => {
+        data.pop(row);
         data.push(row);
         return data;
     }

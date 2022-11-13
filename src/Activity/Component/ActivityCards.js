@@ -6,21 +6,10 @@ import Modal from "react-bootstrap/Modal";
 import AddCardio from "./AddCardio";
 import AddWorkout from "./AddWorkout";
 import ActivityTable from "./ActivityTable";
-import CardioTable from "./CardioTable";
-import WorkoutTable from "./WorkoutTable";
 
 export default function ActivityCards() {
   const [isShown, setIsShown] = useState(false);
   const [isShown2, setIsShown2] = useState(false);
-
-  const cardioActivities = [];
-  const workoutActivities = [];
-
-  const segregate = () => {
-    cardio.map((item) => {
-      item.cardioType != null ? cardioActivities.push(item) : workoutActivities.push(item);
-    })
-  }
 
   const [showC, setShowC] = useState(false);
   const [showW, setShowW] = useState(false);
@@ -35,52 +24,16 @@ export default function ActivityCards() {
     setIsShown((current) => !current);
   };
 
-  const handleClick2 = (event) => {
-    setIsShown2((current) => !current);
-  };
-
   const [activity, setActivity] = useState([]);
-
-
-  const [cardio, setCardio] = useState([]);
-  const [workout, setWorkout] = useState([]);
-  const navigate = useNavigate();
   let service = new GetActivityService();
-
-
-  // const viewActivity = () => {
-  //   console.log("in view activity");
-  //   service
-  //     .getActivities()
-  //     .then((result) => {
-  //       alert(JSON.stringify(result));
-  //       setActivity(result);
-  //       result.map((item) => {
-  //         console.log(item);
-  //         item.activityType != null ? setActivity({
-  //           cardio: [item]
-  //         }) : setWorkout({
-  //           workout: [item]
-  //         });
-
-  //         // item.cardioType != null ? setCardio({ ...cardio, item }) : setWorkout({ ...workout, item });
-
-  //       })
-  //     }).catch((error) => {
-  //       alert(error);
-  //     });
-  // }
-
-  // console.log(cardio);
-  // console.log(workout);
-
 
   const viewActivity = () => {
     console.log("in view activity");
+    setIsShown2((current) => !current);
     service
       .getActivities()
       .then((result) => {
-        alert(JSON.stringify(result));
+        // alert(JSON.stringify(result));
 
         console.log(result);
         setActivity(result);
@@ -88,34 +41,6 @@ export default function ActivityCards() {
         alert(error);
       });
   }
-
-  const viewCardio = () => {
-    console.log("in view cardio");
-    service
-      .getActivities()
-      .then((result) => {
-        // alert(JSON.stringify(result));
-
-        console.log(result);
-        setCardio(result);
-      }).catch((error) => {
-        alert(error);
-      });
-  }
-
-  const viewWorkout = () => {
-    console.log("in view workout");
-    service
-      .getActivities()
-      .then((result) => {
-        // alert(JSON.stringify(result));
-        console.log(result);
-        setWorkout(result);
-      }).catch((error) => {
-        alert(error);
-      });
-  }
-
 
   return (
     <div>
@@ -138,50 +63,26 @@ export default function ActivityCards() {
               width: "100%",
             }}
           >
-            {!isShown2 && (
-              <h5
-                className="card-title pb-4"
-                style={{ fontSize: "30px", fontWeight: "light" }}
-              >
-                View Your Activities
-              </h5>
-            )}
-            {!isShown2 && (
-              <button
-                type="button"
-                className="btn btn-outline-light mb-2 "
-                // onClick={viewActivity}
-                onClick={viewActivity}
-              >
-                View
-              </button>
-            )}
 
-            <br />
-            {isShown2 && (
+            <h5
+              className="card-title pb-4"
+              style={{ fontSize: "30px", fontWeight: "light" }}
+            >
+              View Your Activities
+            </h5>
 
-              <div>
-                <button
-                  type="button"
 
-                  onClick={viewCardio}
-                  className="btn btn-outline-light   mr-5"
-                >
-                  Cardio
-                </button>
-                <button
-                  type="button"
-                  onClick={viewWorkout}
-                  className="btn btn-outline-light   ml-5"
-                >
-                  Workout
-                </button>
-              </div>
-            )}
+            <button
+              type="button"
+              className="btn btn-outline-light mb-2 "
+              onClick={viewActivity}
+            >
+              View
+            </button>
+
+
           </div>
         </div>
-
-
 
         <div
           className="card bg-dark text-white m-1"
@@ -253,20 +154,10 @@ export default function ActivityCards() {
       <Modal show={showW} onHide={handleCloseW}>
         <AddWorkout />
       </Modal>
-      {/* {console.log(activity)} */}
 
 
-
-      {!isShown2 && (
+      {isShown2 && (
         <ActivityTable data={activity} />
-      )}
-
-      {isShown2 && (
-        <CardioTable data={cardio} />
-      )}
-
-      {isShown2 && (
-        <WorkoutTable data={workout} />
       )}
 
     </div>

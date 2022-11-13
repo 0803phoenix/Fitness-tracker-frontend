@@ -11,15 +11,6 @@ class GetActivityService {
                 return response.data;
             });
     }
-
-    getCardio() {
-        return axios.get('http://localhost:9991/fitness/activity',
-            { headers: AuthHeader() })
-            .then(
-                (response) => {
-                    return response.data;
-                });
-    }
 }
 
 export default GetActivityService;    
