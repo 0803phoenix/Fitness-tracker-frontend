@@ -7,12 +7,16 @@ import { useNavigate } from "react-router";
 import Register from "../../Authentication/Component/Register";
 import Modal from "react-bootstrap/Modal";
 import Login from "../../Authentication/Component/Login";
+import AdminLogin from "../../Authentication/Component/AdminLogin";
 
 const NavBar = (props) => {
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
+  const [show1, setShow1] = useState(false);
+  // const [show2, setShow2] = useState(false);
+ 
+  const handleClose1 = () => setShow1(false);
+  // const handleClose2 = () => setShow2(false);
+  const handleShow1 = () => setShow1(true);
+  // const handleShow2 = () => setShow2(true);
 
   const navigate = useNavigate();
 
@@ -40,15 +44,15 @@ const NavBar = (props) => {
         onClick={()=>navigate('/register')}>Get Started</button> */}
       <button
         type="button"
-        className="btn btn-outline-dark float-right"
-        onClick={handleShow}
+        className="btn btn-outline-dark float-right mr-2"
+        onClick={handleShow1}
       >
         Get Started
       </button>
-
-      <Modal show={show} onHide={handleClose}>
+      <Modal show={show1} onHide={handleClose1}>
         <Register />
       </Modal>
+
     </Navbar>
   );
 };

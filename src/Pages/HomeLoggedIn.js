@@ -7,7 +7,7 @@ import HomeCarouselLoggedIn from "./../Layout/Component/HomeCarouselLoggedIn";
 
 function HomeLoggedIn() {
   return (
-    <React.Fragment className="container-fluid">
+    <React.Fragment >
       <NavBarLogout />
       <HomeCarouselLoggedIn />
       <HomeCards />
