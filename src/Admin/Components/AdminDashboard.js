@@ -8,6 +8,7 @@ import cellEditFactory, { Type } from 'react-bootstrap-table2-editor';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import UploadFiles from './UploadFiles';
 import Modal from "react-bootstrap/Modal";
+import ErrorLanding from './../../Pages/ErrorLanding';
 
 function AdminDashboard() {
   const [isShown, setIsShown] = useState(false);
@@ -125,15 +126,12 @@ function AdminDashboard() {
   ]
   return (
     <div>
+      {sessionStorage.getItem('currentUser')==null?<ErrorLanding message ="Login as Admin First"/>:<>
       <HeroImage
         src="https://source.unsplash.com/1400x500/?fitness"
         title="Welcome Admin"
         text="Keep track of your Customers"
       />
-
-
-
-
       <div className="card-group px-1 py-1">
         <div className="card bg-dark text-white m-1">
           <img
@@ -224,6 +222,7 @@ function AdminDashboard() {
           mode: "click"
         })}
         filter={filterFactory()} /> : null}
+        </>}
     </div>
   )
 }

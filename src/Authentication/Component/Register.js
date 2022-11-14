@@ -7,6 +7,8 @@ import UserService from './../Service/UserService';
 
 function Register() {
   const [user, setUser] = useState({ register: new userDto() });
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
   let service = new UserService();
 
@@ -45,6 +47,7 @@ function Register() {
                 }
               />
             </div>
+            {error?<p style={{color:"red"}}>{message}</p>:null}
           </form>
         </Modal.Body>
 
@@ -63,7 +66,10 @@ function Register() {
                     navigate("/login");
                   })
                   .catch((error) => {
-                    alert(error.response.message);
+                    // console.log(error.response.data.message);
+                    // alert(JSON.stringify(error.response.data.message));
+                    setError(true);
+                    setMessage(error.response.data.message);
                   })
               }}>
             Register

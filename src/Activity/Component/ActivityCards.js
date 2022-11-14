@@ -35,7 +35,7 @@ export default function ActivityCards() {
         setActivity(result);
       })
       .catch((error) => {
-        alert(error);
+        alert(JSON.stringify(error.response.data.message));
       });
   };
 

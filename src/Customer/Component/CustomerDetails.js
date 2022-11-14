@@ -45,13 +45,15 @@ function CustomerDetails() {
       .then((result) => {
         sessionStorage.setItem('customerDetails', JSON.stringify(userDetails));
         navigate("/");
+      }).catch((error)=>{
+        alert(JSON.stringify(error.response.data.message));
       })
   }
 
   return (
     <>
       <Modal.Dialog>
-        <Modal.Header closeButton>
+        <Modal.Header >
           <Modal.Title>Add Your Details</Modal.Title>
         </Modal.Header>
 
