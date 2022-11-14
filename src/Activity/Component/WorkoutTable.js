@@ -2,6 +2,7 @@ import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
 import Table from '../../Layout/Component/Table';
 
+
 function WorkoutTable(props) {
     const columns = [
         // {
