@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Login from './Authentication/Component/Login';
 import Logout from './Authentication/Component/Logout';
 import CustomerList from './Customer/Component/CustomerList';
@@ -18,43 +18,26 @@ import DietReccommendation from './Diet/Component/DietReccommendations';
 import ReportCard from './Report/Component/ReportCard';
 //import { useState } from 'react';
 import UserProfile from './UserProfile/Component/UserProfile';
+import ErrorLanding from './Pages/ErrorLanding';
 
 
 
 function App() {
-  // const [isAuthenticated, userHasAuthenticated] = useState(false);
-
-  // useEffect(() => {
-  //   onLoad();
-  // }, []);
-
-  // function onLoad() {
-  //   sessionStorage.getItem('currentUser')==null?userHasAuthenticated(false):userHasAuthenticated(true);
-  // }
 
   return (
     <div className="App">
       <Router>
         <Routes>
-          {/* <UnauthenticatedRoute
-          path="/login"
-          component={Login}
-          appProps={{ isAuthenticated }}
-        /> */}
           <Route path="/register" element={<Register />} />
-          <Route path="/customerDetails" element={<CustomerDetails />} />
-          <Route path="/activity" element={<Activity />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/addCardio" element={<AddCardio />} />
+          <Route path="/adminLogin" element={<AdminLogin />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/logout" element={<Logout />} />
-          <Route path="/customerList" element={<CustomerList />} />
+          <Route path="*" element={<ErrorLanding message="Page Not Found"/>}/>
+          <Route path="/activity" element={<Activity />} />
           <Route path="/diet" element={<Diet />} />
-          <Route path="/adminLogin" element={<AdminLogin />} />
-          <Route path="/uploadFile" element={<UploadFiles />} />
           <Route path="/reccommendation" element={<DietReccommendation />} />
           <Route path="/report" element={<ReportCard/>} />
           <Route path="/userProfile" element ={<UserProfile/>} />

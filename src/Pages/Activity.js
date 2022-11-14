@@ -3,14 +3,16 @@ import Footer from "../Layout/Component/Footer";
 import HeroImage from "../Layout/Component/HeroImage";
 import ActivityCards from "../Activity/Component/ActivityCards";
 import NavBarLogout from "../Layout/Component/NavBarLogout";
-import NavBar from "../Layout/Component/NavBar";
+import ErrorLanding from "./ErrorLanding";
 
 
 
 function Diet() {
   return (
     <>
-      {sessionStorage.getItem('currentUser') == null ? <NavBar /> : <NavBarLogout />}
+      {sessionStorage.getItem('currentUser') == null ? <ErrorLanding message="You are not logged in"/> : 
+      <>
+      <NavBarLogout />
       <HeroImage
         src="https://source.unsplash.com/1400x500/?running"
         title="Keep Track of Your Physical Activities"
@@ -22,6 +24,8 @@ function Diet() {
       </div>
       <ActivityCards />
       <Footer />
+     </>
+     }
     </>
   );
 }
