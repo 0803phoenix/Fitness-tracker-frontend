@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router";
 // import JwtRequest from "./../Model/AppUser";
-import GetActivityService from "../Service/GetActivityService"
+import GetActivityService from "../Service/GetActivityService";
 import Modal from "react-bootstrap/Modal";
 import AddCardio from "./AddCardio";
 import AddWorkout from "./AddWorkout";
@@ -37,17 +37,16 @@ export default function ActivityCards() {
 
         console.log(result);
         setActivity(result);
-      }).catch((error) => {
+      })
+      .catch((error) => {
         alert(error);
       });
-  }
+  };
 
   return (
     <div>
       <div className="card-group px-1 py-1">
-        <div
-          className="card bg-dark text-white m-1"
-        >
+        <div className="card bg-dark text-white m-1">
           <img
             className="card-img"
             src="https://source.unsplash.com/1400x500/?bodybuilding"
@@ -63,14 +62,12 @@ export default function ActivityCards() {
               width: "100%",
             }}
           >
-
             <h5
               className="card-title pb-4"
               style={{ fontSize: "30px", fontWeight: "light" }}
             >
               View Your Activities
             </h5>
-
 
             <button
               type="button"
@@ -79,14 +76,10 @@ export default function ActivityCards() {
             >
               View
             </button>
-
-
           </div>
         </div>
 
-        <div
-          className="card bg-dark text-white m-1"
-        >
+        <div className="card bg-dark text-white m-1">
           <div class="bg-image hover-zoom">
             <img
               className="card-img"
@@ -123,11 +116,9 @@ export default function ActivityCards() {
             )}
             <br />
             {isShown && (
-
               <div>
                 <button
                   type="button"
-
                   onClick={handleShowC}
                   className="btn btn-outline-light   mr-5"
                 >
@@ -145,9 +136,7 @@ export default function ActivityCards() {
           </div>
         </div>
       </div>
-      <div>
-
-      </div>
+      <div></div>
       <Modal show={showC} onHide={handleCloseC}>
         <AddCardio />
       </Modal>
@@ -155,11 +144,7 @@ export default function ActivityCards() {
         <AddWorkout />
       </Modal>
 
-
-      {isShown2 && (
-        <ActivityTable data={activity} />
-      )}
-
+      {isShown2 && <ActivityTable data={activity} />}
     </div>
   );
 }

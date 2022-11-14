@@ -1,5 +1,6 @@
 import axios from 'axios'
 import AuthHeader from '../../Authentication/Service/AuthHeader';
+import Customer from './../../Customer/Model/Customer';
 
 class AdminService{
 

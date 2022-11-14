@@ -1,12 +1,14 @@
 import React from "react";
 import Footer from "../Layout/Component/Footer";
 import HeroImage from "../Layout/Component/HeroImage";
+
 import ActivityCards from "../Activity/Component/ActivityCards";
 import NavBarLogout from "../Layout/Component/NavBarLogout";
 // import { useNavigate } from "react-router-dom";
 // import { useEffect } from "react";
 // import { useState } from "react";
 import NavBar from "../Layout/Component/NavBar";
+
 
 
 function Diet() {

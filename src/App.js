@@ -17,7 +17,7 @@ import AddCardio from "./Activity/Component/AddCardio";
 import Activity from "./Pages/Activity";
 import AdminDashboard from './Admin/Components/AdminDashboard';
 import AdminLogin from './Authentication/Component/AdminLogin';
-import UploadFiles from "./Activity/Component/UploadFiles";
+import UploadFiles from './Activity/Component/UploadFiles';
 //import { useState } from 'react';
 
 

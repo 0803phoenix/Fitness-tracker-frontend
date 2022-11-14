@@ -9,6 +9,7 @@ import BootstrapTable from 'react-bootstrap-table-next'
 import  paginationFactory from 'react-bootstrap-table2-paginator';
 
 
+
 function ActivityTable(props) {
 
     const columns = [
@@ -57,13 +58,13 @@ function ActivityTable(props) {
 
     return (
         <div>
-            {/* <Table id="activityId" columns={columns} data={props.data} expand={expandRow} /> */}
+
             <BootstrapTable 
         keyField="activityId" 
         data={props.data} 
         columns={columns}
         expandRow={expandRow} 
-        hoverS
+        hover
         pagination={paginationFactory()}/>
         </div>
     )
