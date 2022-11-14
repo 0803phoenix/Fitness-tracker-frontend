@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Footer from "../Layout/Component/Footer";
 import NavBar from "../Layout/Component/NavBar";
+import NavBarLogout from "../Layout/Component/NavBarLogout";
 
 import emailjs from "emailjs-com";
 
@@ -38,7 +39,7 @@ function Contact() {
 
   return (
     <>
-      <NavBar />
+      {sessionStorage.getItem('currentUser')==null?<NavBar />:<NavBarLogout/>}
       <div
         className="card-group p-5"
         style={{

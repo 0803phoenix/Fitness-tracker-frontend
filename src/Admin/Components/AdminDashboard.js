@@ -32,9 +32,9 @@ function AdminDashboard() {
   const handleDelete = (username) => {
     console.log(username);
     service.deleteCustomerById(username).then(()=>{
-      console.log(username+ "user Deleted");
+      // console.log(username+ "user Deleted");
+      window.location.reload();
     })
-    //1 YourCellName
   };
 
   const columns = [
