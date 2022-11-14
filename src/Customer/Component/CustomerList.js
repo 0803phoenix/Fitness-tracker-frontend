@@ -46,7 +46,6 @@ function CustomerList() {
                 navigate("/home");
               })
               .catch((error) => {
-                //alert(error.message);
                 alert("Invalid Username/Password. Please try again!");
               });
           }}

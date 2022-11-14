@@ -7,7 +7,6 @@ class GetActivityService {
         return axios.get('http://localhost:9991/fitness/activity',
             { headers: AuthHeader() })
             .then((response) => {
-                // alert(JSON.stringify(response.data));
                 return response.data;
             });
     }

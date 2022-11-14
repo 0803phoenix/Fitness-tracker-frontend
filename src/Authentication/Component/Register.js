@@ -7,12 +7,6 @@ import UserService from './../Service/UserService';
 
 function Register() {
   const [user, setUser] = useState({ register: new userDto() });
-
-  const [show, setShow] = useState(false);
-
-  const handleClose = () => setShow(false);
-  const handleShow = () => setShow(true);
-
   const navigate = useNavigate();
   let service = new UserService();
 
@@ -20,7 +14,7 @@ function Register() {
     <>
       <Modal.Dialog>
         <Modal.Header closeButton>
-          <Modal.Title>Register YourSelf</Modal.Title>
+          <Modal.Title>Register</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
@@ -62,11 +56,9 @@ function Register() {
             onClick={
               (e) => {
                 e.preventDefault();
-                // alert(JSON.stringify(user.register));
                 service
                   .register(user.register)
                   .then((result) => {
-                    // console.log("hi")
                     sessionStorage.setItem('currentUser', JSON.stringify(result));
                     navigate("/login");
                   })

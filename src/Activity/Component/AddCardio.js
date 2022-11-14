@@ -15,9 +15,6 @@ function AddCardio() {
   }
   const handleDistance = (e) => {
     e.preventDefault();
-    // (cardioDetails.distance > 100) ? (
-    //   setCardioDetails({ ...cardioDetails, distance: e.target.value }))
-    //   : (alert("distance too short"));
     setCardioDetails({ ...cardioDetails, distance: e.target.value });
   }
   const handleTimeInMinutes = (e) => {
