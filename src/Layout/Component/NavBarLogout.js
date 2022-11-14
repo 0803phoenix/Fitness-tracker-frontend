@@ -2,7 +2,14 @@ import React from 'react'
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import {LinkContainer} from 'react-router-bootstrap';
+import { useNavigate } from 'react-router';
 const NavBarLogout = (props) => {
+  const navigate = new useNavigate();
+  const handleLogout =()=>{
+    sessionStorage.removeItem("currentUser");
+    navigate("/");
+    window.location.reload();
+  }
     return (
       <Navbar bg="dark" expand="lg" variant="dark">
         <LinkContainer to={"/"}>
@@ -23,7 +30,7 @@ const NavBarLogout = (props) => {
           </Nav>
         </Navbar.Collapse>
         <div className="mr-1">
-          <button type="button" className="btn btn-outline-light float-right ">Logout</button>
+          <button type="button" className="btn btn-outline-light float-right " onClick={handleLogout}>Logout</button>
           <button type="button" className="btn btn-outline-success float-right mr-2">Profile</button>
         </div>
       </Navbar>
