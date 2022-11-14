@@ -3,7 +3,6 @@ import BootstrapTable from 'react-bootstrap-table-next';
 // import Table from '../../Layout/Component/Table';
 import WorkoutTable from './WorkoutTable';
 import DeleteService from '../Service/DeleteService'
-
 function CardioTable(props) {
     let service = new DeleteService();
     const columns = [

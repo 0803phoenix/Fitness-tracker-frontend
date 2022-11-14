@@ -14,7 +14,6 @@ const DietCards = () => {
     const[diet,setDiet]=useState([]);
     let service = new DietService;
     const viewDiet = () =>{
-        console.log("in view diet");
         service
         .getDiets()
         .then((result)=>{
