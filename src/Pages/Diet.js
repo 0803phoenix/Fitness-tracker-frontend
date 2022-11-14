@@ -16,11 +16,22 @@ function Diet() {
         title="Keep Track of Your Diets"
         text=""
       />
+      <div
+        onClick={() => navigate("/reccommendation")}
+        className="card p-5">
+        <h1 className="display-4">Get Diet Recommendations!</h1>
+        <div className="card-body">
+          <p className="lead text-justify"></p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
+          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
+          aliquip ex ea commodo consequat.
+        </div>
+      </div>
       <DietCards />
 
-      <div className="card bg-dark text-white m-1"
+      {/* <div className="card bg-white text-dark m-1"
         onClick={() => navigate("/reccommendation")}>
-        <img className="card-img" src="https://source.unsplash.com/1400x300/?menu" style={{ filter: "brightness(50%)" }} alt="Card image" />
         <div className="card-img-overlay" style={
           {
             position: "absolute",
@@ -37,20 +48,9 @@ function Diet() {
             aliquip ex ea commodo consequat.
           </p>
         </div>
-      </div>
-
-      {/* <div
-        onClick={() => navigate("/reccommendation")}
-        className="card p-5">
-        <h1 className="display-4">Get Diet Recommendations!</h1>
-        <div className="card-body">
-          <p className="lead text-justify"></p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-          minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-          aliquip ex ea commodo consequat.
-        </div>
       </div> */}
+
+      
 
       <Footer />
     </>

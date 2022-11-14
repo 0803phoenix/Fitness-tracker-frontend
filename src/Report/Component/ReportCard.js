@@ -202,8 +202,7 @@ const ReportCard =()=>{
          </div>    
          </> : null} */}
      <Footer/>        
-    </>
-    )
+    </>    )
   }
 
 
