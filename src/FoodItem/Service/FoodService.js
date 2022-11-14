@@ -10,7 +10,6 @@ class FoodService {
 
 
     getFoodItems(){
-        console.log("inside get food items");
         return axios.get('http://localhost:9991/fitness/food-items',
         {headers:AuthHeader()})
         .then((response) =>{

@@ -6,9 +6,6 @@ import NavBar from "../Layout/Component/NavBar";
 import HomeCarousel from "../Layout/Component/HomeCarousel";
 import NavBarLogout from "../Layout/Component/NavBarLogout";
 
-// import AuthHeader from "../../Authentication/Service/AuthHeader";
-
-
 class Home extends React.Component {
     render() {
         return (
