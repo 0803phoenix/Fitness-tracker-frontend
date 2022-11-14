@@ -34,10 +34,9 @@ function AdminDashboard() {
   const handleDelete = (username) => {
     console.log(username);
     service.deleteCustomerById(username).then(()=>{
+      // console.log(username+ "user Deleted");
       window.location.reload();
-      console.log(username+ "user Deleted");
     })
-    //1 YourCellName
   };
 
   const columns = [

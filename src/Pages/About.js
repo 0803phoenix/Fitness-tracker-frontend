@@ -3,6 +3,7 @@ import NavBar from "./../Layout/Component/NavBar";
 import Footer from "./../Layout/Component/Footer";
 import Card from "react-bootstrap/Card";
 import ReactCardFlip from "react-card-flip";
+import NavBarLogout from "../Layout/Component/NavBarLogout";
 
 class About extends Component {
   constructor() {
@@ -21,7 +22,7 @@ class About extends Component {
   render() {
     return (
       <div>
-        <NavBar />
+        {sessionStorage.getItem('currentUser')==null?<NavBar />:<NavBarLogout/>}
         <div
           className="p-5"
           style={{
