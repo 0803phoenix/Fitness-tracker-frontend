@@ -7,6 +7,10 @@ import MealTable from './MealTable';
 function DietTable(props) {
   
   const columns=[
+      // {
+      //   dataField:"dietId",
+      //   text:"Diet ID", 
+      // },
       {
         dataField:"date",
         text:"Date",

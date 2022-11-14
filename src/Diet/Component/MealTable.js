@@ -67,7 +67,7 @@ function MealTable(props) {
       },
       {
         text: '',
-        formatter: (row) => {
+        formatter: (cellContent,row) => {
           return (
             <button
               className="btn btn-danger btn-xs"
