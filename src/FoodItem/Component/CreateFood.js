@@ -44,7 +44,6 @@ function CreateFood(props) {
              <datalist id="data" >
             {
                 props.foodItems.map((item) =>
-        
                 <option key={item.foodId} value={item.foodName} />
             )}
             </datalist>
@@ -61,7 +60,6 @@ function CreateFood(props) {
               service
                 .addFood(food.dietId,food.fooditemId)
                 .then((result) => {
-                  console.log(result)
                   navigate("/diet");
                   alert("diet added successfully");
                 })

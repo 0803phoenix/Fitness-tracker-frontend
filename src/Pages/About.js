@@ -115,6 +115,7 @@ class About extends Component {
                         className="m-5"
                         src="https://www.edigitalagency.com.au/wp-content/uploads/new-linkedin-logo-white-black-png.png"
                         height="50"
+                        alt="Card"
                       />
                     </a>
                     <a href="https://google.com">
@@ -122,6 +123,7 @@ class About extends Component {
                         className="m-5"
                         src="https://cdn3.iconfinder.com/data/icons/picons-social/57/46-facebook-512.png"
                         height="60"
+                        alt="Card"
                       />
                     </a>
                     <a href="https://google.com">
@@ -129,6 +131,7 @@ class About extends Component {
                         className="m-5"
                         src="https://cdn-icons-png.flaticon.com/512/87/87390.png"
                         height="50"
+                        alt="Card"
                       />
                     </a>
                     <a href="https://google.com">
@@ -136,11 +139,11 @@ class About extends Component {
                         className="m-5"
                         src="https://pngimg.com/uploads/twitter/twitter_PNG1.png"
                         height="50"
+                        alt="Card"
                       />
                     </a>
                     <br />
                     <button
-                      // onclick
                       type="button"
                       className="btn btn-outline-dark"
                     >

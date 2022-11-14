@@ -1,5 +1,4 @@
 import React from "react";
-
 import Footer from "../Layout/Component/Footer";
 import HeroImage from "../Layout/Component/HeroImage";
 import DietCards from './../Diet/Component/DietCards';

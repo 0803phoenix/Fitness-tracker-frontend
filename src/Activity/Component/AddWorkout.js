@@ -4,7 +4,6 @@ import { useNavigate } from "react-router";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import WorkoutService from "../Service/WorkoutService";
-import ActivityCards from "./ActivityCards";
 
 function AddWorkout() {
     const [workoutDetails, setworkoutDetails] = useState(new Workout());

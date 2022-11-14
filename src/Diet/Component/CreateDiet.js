@@ -3,7 +3,6 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import AddDietDto from '../Model/AddDietDto';
 import DietService from '../Service/DietService';
 
 function CreateDiet() {
@@ -64,11 +63,9 @@ function CreateDiet() {
           onClick={
             (e) => {
               e.preventDefault();
-              console.log(createDiet);
               service
                 .addDiet(createDiet)
                 .then((result) => {
-                  console.log(result)
                   navigate("/diet");
                   alert("diet added successfully");
                 })

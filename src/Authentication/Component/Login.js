@@ -2,16 +2,12 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import UserService from "./../Service/UserService";
 import JwtRequest from "./../Model/AppUser";
-import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import NavBar from "./../../Layout/Component/NavBar";
-import Footer from "./../../Layout/Component/Footer";
 import CustomerDetails from "./../../Customer/Component/CustomerDetails";
-import Customer from './../../Customer/Model/Customer';
 
 function Login() {
   const [user, setUser] = useState({ login: new JwtRequest() });
-  // const [userDetails, setUserDetails] = useState( new Customer() );
   const navigate = useNavigate();
   let service = new UserService();
 
@@ -20,28 +16,18 @@ function Login() {
   const handleClose = () => setShow(false);
 
   const handleShow = () => {
-    getCustomerDetails();
-    // alert("Inside handleShow");
-    // alert((JSON.parse(sessionStorage.getItem('customerDetails'))).userEmail.length<1);
-    // (JSON.parse(sessionStorage.getItem('customerDetails'))).userEmail.length<1 ?
-    //   setShow(true) : navigate("/homeLoggedIn");
-    
+    getCustomerDetails();   
   }
 
  
   const getCustomerDetails = ()=>{
-    // alert("In get Customer Details");
-  
     service.getCustomer().then((result)=>{
       if(result==400){
-        // alert("customer details not in backend")
         setShow(true);
       }
-      else{
-        
+      else{ 
         sessionStorage.setItem('customerDetails',JSON.stringify(result));
         navigate("/");
-        // alert("Customer details Stored");
       }
       
     })
@@ -104,11 +90,11 @@ function Login() {
                 .login(user.login)
                 .then((result) => {
                   sessionStorage.setItem("currentUser", JSON.stringify(result));
-                  // console.log(sessionStorage.getItem("currentUser"));
+                  
                   handleShow();
                 })
                 .catch((error) => {
-                  //alert(error.message);
+                
                   alert("Invalid Username/Password. Please try again!");
                 });
             }}
