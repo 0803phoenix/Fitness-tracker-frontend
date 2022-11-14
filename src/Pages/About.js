@@ -22,7 +22,7 @@ class About extends Component {
   render() {
     return (
       <div>
-        {sessionStorage.getItem('currentUser')==null?<NavBar />:<NavBarLogout/>}
+        {sessionStorage.getItem('currentUser') == null ? <NavBar /> : <NavBarLogout />}
         <div
           className="p-5"
           style={{
@@ -64,14 +64,16 @@ class About extends Component {
               <Card.Text className="">
                 <h2 className="display-4">Why use Fitness Tracker?</h2>
                 <br />
-                As you age, it’s important to protect your bones, joints, and
-                muscles – they support your body and help you move. Keeping
-                bones, joints, and muscles healthy can help ensure that you’re
-                able to do your daily activities and be physically active. As
-                you age, it’s important to protect your bones, joints, and
-                muscles – they support your body and help you move. Keeping
-                bones, joints, and muscles healthy can help ensure that you’re
-                able to do your daily activities and be physically active.
+                Fitness Tracker provides you accessible analytics, tracking, and activity history.
+                Your Fitness Tracker data is securely stored on our servers. If you lose or
+                change your device, your data is backed up on Fitness Tracker servers.
+                When you set up Fitness Tracker on your device, you can choose whether
+                to keep using our service or not.<br /><br />
+                Eating a healthy diet and exercising often can help control or delay
+                health issues associated with aging, like high blood pressure and diabetes.
+                Set short-term goals to achieve and maintain a healthy diet and exercise routine.
+
+
               </Card.Text>
               <Card.Text className="px-md-5"></Card.Text>
             </Card.ImgOverlay>
@@ -79,7 +81,7 @@ class About extends Component {
 
           <ReactCardFlip
             isFlipped={this.state.isFlipped}
-            flipDirection="horizontal"
+            flipDirection="vertical"
           >
             <frontContainer>
               <Card
@@ -87,7 +89,7 @@ class About extends Component {
                 className=" text-dark my-md-5 mx-md-5"
               >
                 <Card.Img
-                  src="https://t4.ftcdn.net/jpg/01/28/10/83/360_F_128108370_hfp3ZKkBdPHhPPKLy5QEm0hmyXiRASSh.jpg"
+                  src="https://t3.ftcdn.net/jpg/02/82/71/12/360_F_282711281_WGbatL1zECbAkMFQJUYcjiJ6bzORQ4kn.jpg"
                   alt="Card image"
                   height="300"
                 />
@@ -104,7 +106,7 @@ class About extends Component {
             <backContainer>
               <Card className=" text-dark my-md-5 mx-md-5">
                 <Card.Img
-                  src="https://t4.ftcdn.net/jpg/01/28/10/83/360_F_128108370_hfp3ZKkBdPHhPPKLy5QEm0hmyXiRASSh.jpg"
+                  src="https://t3.ftcdn.net/jpg/02/82/71/12/360_F_282711281_WGbatL1zECbAkMFQJUYcjiJ6bzORQ4kn.jpg"
                   alt="Card image"
                   height="300"
                 />
