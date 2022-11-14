@@ -10,14 +10,11 @@ import Contact from './Pages/Contact';
 import Diet from './Pages/Diet';
 import Register from './Authentication/Component/Register';
 import CustomerDetails from './Customer/Component/CustomerDetails';
-// import AdminDashboard from './Admin/Components/AdminDashboard';
-// import AcitvityMain from "./Activity/Component/ActivityMain";
-// import GetActivity from "./Activity/Component/GetActivity";
 import AddCardio from "./Activity/Component/AddCardio";
 import Activity from "./Pages/Activity";
 import AdminDashboard from './Admin/Components/AdminDashboard';
 import AdminLogin from './Authentication/Component/AdminLogin';
-import UploadFiles from './Activity/Component/UploadFiles';
+import UploadFiles from "./Admin/Components/UploadFiles"
 //import { useState } from 'react';
 
 
@@ -37,7 +34,7 @@ function App() {
     <div className="App">
       <Router>
         <Routes>
-        {/* <UnauthenticatedRoute
+          {/* <UnauthenticatedRoute
           path="/login"
           component={Login}
           appProps={{ isAuthenticated }}
@@ -46,7 +43,7 @@ function App() {
           <Route path="/customerDetails" element={<CustomerDetails />} />
           {/* <Route path="/homeLoggedIn" element={<HomeLoggedIn />} /> */}
           <Route path="/activity" element={<Activity />} />
-          <Route path="/admin" element={<AdminDashboard/>}/>
+          <Route path="/admin" element={<AdminDashboard />} />
           <Route path="/addCardio" element={<AddCardio />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
@@ -55,8 +52,8 @@ function App() {
           <Route path="/logout" element={<Logout />} />
           <Route path="/customerList" element={<CustomerList />} />
           <Route path="/diet" element={<Diet />} />
-          <Route path="/adminLogin" element={<AdminLogin/>}/>
-          <Route path="/uploadFile" element={<UploadFiles/>}/>
+          <Route path="/adminLogin" element={<AdminLogin />} />
+          <Route path="/uploadFile" element={<UploadFiles />} />
         </Routes>
       </Router>
     </div>

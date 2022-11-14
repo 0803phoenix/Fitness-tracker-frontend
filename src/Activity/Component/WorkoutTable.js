@@ -1,7 +1,7 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
 import Table from '../../Layout/Component/Table';
-// import BootstrapTable from 'react-bootstrap-table-next'
+
 
 function WorkoutTable(props) {
     const columns = [
@@ -32,12 +32,12 @@ function WorkoutTable(props) {
         <div>
             {console.log(props.data)}
 
-        <BootstrapTable 
-        keyField="activityId" 
-        data={props.data} 
-        columns={columns}
-        hover
-       />
+            <BootstrapTable
+                keyField="activityId"
+                data={props.data}
+                columns={columns}
+                hover
+            />
 
         </div>
     )

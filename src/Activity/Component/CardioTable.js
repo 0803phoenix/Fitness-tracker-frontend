@@ -2,7 +2,7 @@ import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next';
 // import Table from '../../Layout/Component/Table';
 import WorkoutTable from './WorkoutTable';
-// import BootstrapTable from 'react-bootstrap-table-next'
+
 
 function CardioTable(props) {
     const columns = [
@@ -46,12 +46,12 @@ function CardioTable(props) {
             {/* {props.data.activityName === "CARDIO" ? console.log(props.data.activityName) : <WorkoutTable />} */}
             {console.log(props.data)}
 
-            <BootstrapTable 
-        keyField="activityId" 
-        data={props.data} 
-        columns={columns}
-        hover
-       />
+            <BootstrapTable
+                keyField="activityId"
+                data={props.data}
+                columns={columns}
+                hover
+            />
 
         </>
     )
