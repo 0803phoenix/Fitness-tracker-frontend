@@ -6,9 +6,7 @@ import CardioTable from './CardioTable';
 import WorkoutTable from './WorkoutTable';
 import Cardio from '../Model/Cardio';
 import BootstrapTable from 'react-bootstrap-table-next'
-import  paginationFactory from 'react-bootstrap-table2-paginator';
-
-
+import paginationFactory from 'react-bootstrap-table2-paginator';
 
 function ActivityTable(props) {
 
@@ -59,13 +57,13 @@ function ActivityTable(props) {
     return (
         <div>
 
-            <BootstrapTable 
-        keyField="activityId" 
-        data={props.data} 
-        columns={columns}
-        expandRow={expandRow} 
-        hover
-        pagination={paginationFactory()}/>
+            <BootstrapTable
+                keyField="activityId"
+                data={props.data}
+                columns={columns}
+                expandRow={expandRow}
+                hover
+                pagination={paginationFactory()} />
         </div>
     )
 }
