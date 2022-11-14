@@ -4,6 +4,7 @@ import UserService from "./../Service/UserService";
 import JwtRequest from "./../Model/AppUser";
 import Modal from "react-bootstrap/Modal";
 import NavBar from "./../../Layout/Component/NavBar";
+import Footer from "../../Layout/Component/Footer";
 import CustomerDetails from "./../../Customer/Component/CustomerDetails";
 
 function Login() {
@@ -106,9 +107,7 @@ function Login() {
           </Modal>
         </div>
       </div>
-
-
-      <footer className="container-fluid bg-secondary text-white fixed-bottom py-1">
+      {/* <footer className="container-fluid bg-secondary text-white fixed-bottom py-1">
         <div className="mt-3">
           <p className="float-right">
             <a href="#">Back to top</a>
@@ -118,7 +117,8 @@ function Login() {
             <a href="#">Terms</a>
           </p>
         </div>
-      </footer>
+      </footer> */}
+      <Footer/>
     </>
   );
 }

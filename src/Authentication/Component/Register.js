@@ -14,7 +14,7 @@ function Register() {
     <>
       <Modal.Dialog>
         <Modal.Header closeButton>
-          <Modal.Title>Register YourSelf</Modal.Title>
+          <Modal.Title>Register</Modal.Title>
         </Modal.Header>
 
         <Modal.Body>
