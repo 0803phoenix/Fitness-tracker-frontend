@@ -1,7 +1,6 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next'
 import  paginationFactory from 'react-bootstrap-table2-paginator';
-//import DietService from '../Service/DietService';
 import MealTable from './MealTable';
 
 function DietTable(props) {
@@ -25,7 +24,6 @@ function DietTable(props) {
       renderer: row => (
         <>
           <MealTable data={row.mealList} diet={row.dietId}/> 
-
         </>
       )
     };

@@ -2,25 +2,13 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import UserService from "./../Service/UserService";
 import JwtRequest from "./../Model/AppUser";
-// import Button from "react-bootstrap/Button";
-// import Modal from "react-bootstrap/Modal";
 import NavBar from "./../../Layout/Component/NavBar";
-// import Footer from "./../../Layout/Component/Footer";
-// import CustomerDetails from "./../../Customer/Component/CustomerDetails";
-// import Customer from './../../Customer/Model/Customer';
 
 function AdminLogin() {
   const [user, setUser] = useState({ login: new JwtRequest() });
-  // const [userDetails, setUserDetails] = useState( new Customer() );
   const navigate = useNavigate();
   let service = new UserService();
 
-  // const [show, setShow] = useState(false);
-
-  // const handleClose = () => setShow(false);
-  // const handleShow = () => setShow(true) ;
-
-  
   return (
     <>
       <div className="container">
@@ -31,12 +19,8 @@ function AdminLogin() {
         backgroundImage:
           "url('https://source.unsplash.com/2400x1000/?gym, exercise')",
         height: '100vh',
-        // marginTop: '-70px',
-        // fontSize:'50px',
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
-        // opacity:'0.5',
-        // zIndex:'1',
       }}>
         <div className="container w-25 float-center pt-5 " >
           <h1>Login</h1>
@@ -85,7 +69,6 @@ function AdminLogin() {
                   navigate("/admin");
                 })
                 .catch((error) => {
-                  //alert(error.message);
                   alert("Invalid Username/Password. Please try again!");
                 });
             }}

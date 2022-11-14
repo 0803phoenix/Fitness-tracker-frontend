@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState } from 'react';
 import AdminService from './../Service/AdminService';
-import { useEffect } from 'react';
 import HeroImage from '../../Layout/Component/HeroImage';
 import BootstrapTable from 'react-bootstrap-table-next'
 import paginationFactory from 'react-bootstrap-table2-paginator';
@@ -9,8 +8,6 @@ import cellEditFactory, { Type } from 'react-bootstrap-table2-editor';
 import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 import UploadFiles from './UploadFiles';
 import Modal from "react-bootstrap/Modal";
-
-// import { Button } from 'react-bootstrap';
 
 function AdminDashboard() {
   const [isShown, setIsShown] = useState(false);
@@ -28,26 +25,17 @@ function AdminDashboard() {
 
 
   const getUserDetails = () => {
-    // console.log("Hiii");
     service.getAllCustomers().then((result) => {
       setUserDetails(result);
       setShowTable(true);
-      // console.log(result);
-    }).catch((error) => {
-      alert("error")
-    })
-  }
-  const getUserById = (username) => {
-    service.getCustomerById(username).then((result) => {
-      setUserDetails(result);
-    })
-  }
 
+    }).catch((error) => {
+      alert("Customer Details Does not exist")
+    })
+  }
 
   const handleDelete = (username) => {
-    console.log(username);
     service.deleteCustomerById(username).then(() => {
-      // console.log(username+ "user Deleted");
       window.location.reload();
     })
   };

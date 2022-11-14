@@ -1,6 +1,4 @@
 import { useState } from "react";
-import { useNavigate } from "react-router";
-// import JwtRequest from "./../Model/AppUser";
 import GetActivityService from "../Service/GetActivityService";
 import Modal from "react-bootstrap/Modal";
 import AddCardio from "./AddCardio";
@@ -33,8 +31,6 @@ export default function ActivityCards() {
     service
       .getActivities()
       .then((result) => {
-        // alert(JSON.stringify(result));
-
         console.log(result);
         setActivity(result);
       })

@@ -43,7 +43,7 @@ function CustomerDetails() {
     e.preventDefault();
     service.addCustomer(userDetails)
     .then((result)=>{
-      navigate("/homeLoggedIn");
+      navigate("/");
     })
   }
 
@@ -94,7 +94,6 @@ function CustomerDetails() {
               <select className="form-control" name="gender" value={userDetails.gender} onChange={handleGender}>
                 <option value="MALE">MALE</option>
                 <option value="FEMALE">FEMALE</option>
-                {/* <option value="OTHERS">Others</option> */}
               </select>
             </div>
             <div className="form-group">

@@ -35,14 +35,11 @@ class UserService {
   }
 
   getCustomer(){
-    // alert("in customer  service");
     return axios.get('http://localhost:9991/fitness/customer',
     {headers:AuthHeader()})
     .then((response)=>{
-      // alert(JSON.stringify(response.data));
         return response.data;
     }).catch((e)=>{
-      // alert(e.response.data.message);
       return e.response.data.status;
     })
 }
