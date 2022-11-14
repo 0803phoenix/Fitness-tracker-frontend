@@ -1,16 +1,12 @@
 import React from 'react'
 import BootstrapTable from 'react-bootstrap-table-next'
 import  paginationFactory from 'react-bootstrap-table2-paginator';
-import DietService from '../Service/DietService';
+//import DietService from '../Service/DietService';
 import MealTable from './MealTable';
 
 function DietTable(props) {
   
   const columns=[
-      // {
-      //   dataField:"dietId",
-      //   text:"Diet ID", 
-      // },
       {
         dataField:"date",
         text:"Date",

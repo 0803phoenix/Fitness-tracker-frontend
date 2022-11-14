@@ -3,7 +3,7 @@ import { useState } from "react";
 import { useNavigate } from "react-router";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
-import AddDietDto from '../Model/AddDietDto';
+//import AddDietDto from '../Model/AddDietDto';
 import DietService from '../Service/DietService';
 
 function CreateDiet() {

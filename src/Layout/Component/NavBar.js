@@ -3,11 +3,10 @@ import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
 // import Button from 'react-bootstrap/Button';
-import { useNavigate } from "react-router";
+//import { useNavigate } from "react-router";
 import Register from "../../Authentication/Component/Register";
 import Modal from "react-bootstrap/Modal";
-import Login from "../../Authentication/Component/Login";
-import AdminLogin from "../../Authentication/Component/AdminLogin";
+
 
 const NavBar = (props) => {
   const [show1, setShow1] = useState(false);
@@ -18,7 +17,7 @@ const NavBar = (props) => {
   const handleShow1 = () => setShow1(true);
   // const handleShow2 = () => setShow2(true);
 
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   return (
     <Navbar bg="transparent" expand="lg" variant="light">

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+//import { useNavigate } from "react-router-dom";
 import DietService from "../Service/DietService";
 import CreateDiet from "./CreateDiet";
 import DietTable from "./DietTable";
@@ -12,7 +12,7 @@ const DietCards = () => {
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const[diet,setDiet]=useState([]);
-    let service = new DietService;
+    let service = new DietService();
     const viewDiet = () =>{
         service
         .getDiets()
@@ -28,7 +28,7 @@ const DietCards = () => {
      <> 
       <div className="card-group px-1 py-1" >
       <div className="card bg-dark text-white m-1" onClick={viewDiet}>
-        <img className="card-img" src="https://source.unsplash.com/1400x500/?food" style={{filter: "brightness(50%)"}} alt="Card image"/>
+        <img className="card-img" src="https://source.unsplash.com/1400x500/?food" style={{filter: "brightness(50%)"}} alt="food"/>
             <div className="card-img-overlay" style={
             {
                 position: "absolute",
@@ -41,7 +41,7 @@ const DietCards = () => {
             </div>
       </div>
       <div className="card bg-dark text-white m-1" onClick={handleShow}>
-        <img className="card-img" src="https://source.unsplash.com/1400x500/?beverage" style={{filter: "brightness(50%)"}} alt="Card image"/>
+        <img className="card-img" src="https://source.unsplash.com/1400x500/?beverage" style={{filter: "brightness(50%)"}} alt="beverage"/>
             <div className="card-img-overlay" style={
             {
                 position: "absolute",
