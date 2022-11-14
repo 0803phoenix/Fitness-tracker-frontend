@@ -17,6 +17,7 @@ import AddCardio from "./Activity/Component/AddCardio";
 import Activity from "./Pages/Activity";
 import AdminDashboard from './Admin/Components/AdminDashboard';
 import AdminLogin from './Authentication/Component/AdminLogin';
+import UploadFiles from './Activity/Component/UploadFiles';
 
 
 
@@ -39,6 +40,7 @@ function App() {
           <Route path="/customerList" element={<CustomerList />} />
           <Route path="/diet" element={<Diet />} />
           <Route path="/adminLogin" element={<AdminLogin/>}/>
+          <Route path="/uploadFile" element={<UploadFiles/>}/>
         </Routes>
       </Router>
     </div>

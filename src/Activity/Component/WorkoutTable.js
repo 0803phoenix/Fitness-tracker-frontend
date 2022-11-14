@@ -1,4 +1,5 @@
 import React from 'react'
+import BootstrapTable from 'react-bootstrap-table-next';
 import Table from '../../Layout/Component/Table';
 
 function WorkoutTable(props) {
@@ -29,7 +30,14 @@ function WorkoutTable(props) {
     return (
         <div>
             {console.log(props.data)}
-            < Table id="activityId" columns={columns} data={props.data} />
+            {/* < BootstrapTable id="activityId" columns={columns} data={props.data} /> */}
+
+            <BootstrapTable 
+        keyField="activityId" 
+        data={props.data} 
+        columns={columns}
+        hover
+        />
         </div>
     )
 }

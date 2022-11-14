@@ -12,11 +12,13 @@ import filterFactory, { textFilter } from 'react-bootstrap-table2-filter';
 function AdminDashboard() {
   const [userDetails, setUserDetails] = useState([]);
   let service = new AdminService();
+  const [showTable, setShowTable] = useState(false);
   
   const getUserDetails = () => {
     // console.log("Hiii");
     service.getAllCustomers().then((result) => {
       setUserDetails(result);
+      setShowTable(true);
       // console.log(result);
     }).catch((error) => {
       alert("error")
@@ -32,6 +34,7 @@ function AdminDashboard() {
   const handleDelete = (username) => {
     console.log(username);
     service.deleteCustomerById(username).then(()=>{
+      window.location.reload();
       console.log(username+ "user Deleted");
     })
     //1 YourCellName
@@ -127,10 +130,40 @@ function AdminDashboard() {
         title="Welcome Admin"
         text="Keep track of your Customers"
       />
-      <button className="btn, btn-primary" onClick={getUserDetails}>Get All Customers</button>
-      <button className="btn, btn-primary" onClick={getUserById}>Get Customer by Id</button>
+      <div className="card-group px-1 py-1" >
+      <div className="card bg-dark text-white m-1" >
+        <img className="card-img" src="https://source.unsplash.com/1400x500/?food" style={{filter: "brightness(50%)"}} alt="Card image"/>
+            <div className="card-img-overlay" style={
+            {
+                position: "absolute",
+                top: "40%",
+                left: "0",
+                width: "100%",
+            }
+        }>
+                <button className="btn, btn-success" onClick={getUserDetails}>Get All Customers</button>
+                {/* <h5 className="card-title" style={{fontSize:"30px", fontWeight:"light"}}>View Existing Diets</h5> */}
+            </div>
+      </div>
+      <div className="card bg-dark text-white m-1" >
+        <img className="card-img" src="https://source.unsplash.com/1400x500/?beverage" style={{filter: "brightness(50%)"}} alt="Card image"/>
+            <div className="card-img-overlay" style={
+            {
+                position: "absolute",
+                top: "40%",
+                left: "0",
+                width: "100%",
+            }
+        }>
+                <button className="btn, btn-success" onClick={getUserById}>Get Customer by Id</button>
+                {/* <h5 className="card-title" style={{fontSize:"30px", fontWeight:"light"}}>Create a New Diet</h5> */}
+            </div>
+      </div>
+      </div>
+      {/* <button className="btn, btn-primary" onClick={getUserDetails}>Get All Customers</button> */}
+      {/* <button className="btn, btn-primary" onClick={getUserById}>Get Customer by Id</button> */}
 
-      <BootstrapTable keyField='userId' 
+      {showTable?<BootstrapTable keyField='userId' 
       data={userDetails} 
       columns={columns} 
       striped
@@ -140,7 +173,7 @@ function AdminDashboard() {
       cellEdit ={cellEditFactory({
         mode:"click"
       })}
-      filter={ filterFactory()} />
+      filter={ filterFactory()} />:null}
     </div>
   )
 }
