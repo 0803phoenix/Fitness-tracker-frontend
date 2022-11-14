@@ -43,6 +43,7 @@ function CustomerDetails() {
     e.preventDefault();
     service.addCustomer(userDetails)
     .then((result)=>{
+      // sessionStorage.setItem('customerDetails',JSON.stringify(userDetails));
       navigate("/");
     })
   }
