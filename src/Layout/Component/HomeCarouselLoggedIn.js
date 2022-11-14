@@ -23,7 +23,7 @@ function HomeCarouselLoggedIn() {
             >
               Activity
             </button>
-            <button class="btn btn-primary mr-1">Add Diet</button>
+            <button class="btn btn-primary mr-1" onClick={() => navigate("/diet")}>Add Diet </button>
             <button class="btn btn-success mr-1">Get Report</button>
 
           </Carousel.Caption>
@@ -45,7 +45,7 @@ function HomeCarouselLoggedIn() {
             >
               Activity
             </button>
-            <button class="btn btn-primary mr-1">Add Diet</button>
+            <button class="btn btn-primary mr-1" onClick={() => navigate("/diet")}>Add Diet</button>
             <button class="btn btn-success mr-1">Get Report</button>
 
           </Carousel.Caption>
@@ -69,7 +69,7 @@ function HomeCarouselLoggedIn() {
             >
               Activity
             </button>
-            <button class="btn btn-primary mr-1">Add Diet</button>
+            <button class="btn btn-primary mr-1" onClick={() => navigate("/diet")}>Add Diet</button>
             <button class="btn btn-success mr-1">Get Report</button>
 
           </Carousel.Caption>
