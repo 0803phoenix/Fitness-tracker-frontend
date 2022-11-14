@@ -39,7 +39,7 @@ function Contact() {
 
   return (
     <>
-      {sessionStorage.getItem('currentUser')==null?<NavBar />:<NavBarLogout/>}
+      {sessionStorage.getItem('currentUser') == null ? <NavBar /> : <NavBarLogout />}
       <div
         className="card-group p-5"
         style={{
@@ -50,10 +50,11 @@ function Contact() {
           <h1 className="display-4">Get in Touch!</h1>
           <div className="card-body">
             <p className="lead text-justify"></p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
-            ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Have questions or need to report an issue with out product or service?
+            We've got you covered.<br /><br />
+            Our support team is available 24x7 and is alawys available to help you.
+            We request you to enter the required details and we ensure that we will
+            get back to you!
           </div>
         </div>
         <div className="card p-5">
