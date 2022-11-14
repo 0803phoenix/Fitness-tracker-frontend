@@ -5,6 +5,7 @@ import JwtRequest from "./../Model/AppUser";
 import Modal from "react-bootstrap/Modal";
 import NavBar from "./../../Layout/Component/NavBar";
 import CustomerDetails from "./../../Customer/Component/CustomerDetails";
+import Footer from "./../../Layout/Component/Footer";
 
 function Login() {
   const [user, setUser] = useState({ login: new JwtRequest() });

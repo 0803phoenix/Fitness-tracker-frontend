@@ -10,7 +10,7 @@ const NavBar = (props) => {
   const [show1, setShow1] = useState(false);
   const handleClose1 = () => setShow1(false);
   const handleShow1 = () => setShow1(true);
-  const navigate = useNavigate();
+  //const navigate = useNavigate();
 
   return (
     <Navbar bg="transparent" expand="lg" variant="light">
