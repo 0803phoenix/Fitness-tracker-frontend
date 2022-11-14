@@ -2,14 +2,16 @@ import React from "react";
 
 import Footer from "../Layout/Component/Footer";
 import HeroImage from "../Layout/Component/HeroImage";
-import NavBar from "../Layout/Component/NavBar";
 import DietCards from './../Diet/Component/DietCards';
+import NavBarLogout from "../Layout/Component/NavBarLogout";
+import { useNavigate } from "react-router-dom";
 
 
 function Diet() {
+  const navigate = useNavigate();
   return (
     <>
-      <NavBar />
+      {sessionStorage.getItem('currentUser')==null?navigate("/login"):<NavBarLogout/>}
       <HeroImage
         src="https://source.unsplash.com/1400x500/?meal"
         title="Keep Track of Your Diets"

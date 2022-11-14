@@ -134,7 +134,7 @@ function CustomerDetails() {
               <label >Body Type</label>
               <select className="form-control" name="bodyType" value={userDetails.bodyType} onChange={handleBodyType}>
                 <option value="ENDOMORPH">ENDOMORPH</option>
-                <option value="EXOMORPH">EXOMORPH</option>
+                <option value="ECTOMORPH">ECTOMORPH</option>
                 <option value="MESOMORPH">MESOMORPH</option>
               </select>
             </div>

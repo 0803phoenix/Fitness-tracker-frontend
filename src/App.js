@@ -17,14 +17,31 @@ import AddCardio from "./Activity/Component/AddCardio";
 import Activity from "./Pages/Activity";
 import AdminDashboard from './Admin/Components/AdminDashboard';
 import AdminLogin from './Authentication/Component/AdminLogin';
+import UploadFiles from "./Activity/Component/UploadFiles";
+//import { useState } from 'react';
 
 
 
 function App() {
+  // const [isAuthenticated, userHasAuthenticated] = useState(false);
+
+  // useEffect(() => {
+  //   onLoad();
+  // }, []);
+
+  // function onLoad() {
+  //   sessionStorage.getItem('currentUser')==null?userHasAuthenticated(false):userHasAuthenticated(true);
+  // }
+
   return (
     <div className="App">
       <Router>
         <Routes>
+        {/* <UnauthenticatedRoute
+          path="/login"
+          component={Login}
+          appProps={{ isAuthenticated }}
+        /> */}
           <Route path="/register" element={<Register />} />
           <Route path="/customerDetails" element={<CustomerDetails />} />
           <Route path="/homeLoggedIn" element={<HomeLoggedIn />} />
@@ -39,6 +56,7 @@ function App() {
           <Route path="/customerList" element={<CustomerList />} />
           <Route path="/diet" element={<Diet />} />
           <Route path="/adminLogin" element={<AdminLogin/>}/>
+          <Route path="/uploadFile" element={<UploadFiles/>}/>
         </Routes>
       </Router>
     </div>

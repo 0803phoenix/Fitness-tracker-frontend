@@ -40,7 +40,7 @@ function Login() {
       else{
         
         sessionStorage.setItem('customerDetails',JSON.stringify(result));
-        navigate("/homeLoggedIn");
+        navigate("/");
         // alert("Customer details Stored");
       }
       
