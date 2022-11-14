@@ -42,7 +42,7 @@ function ActivityTable(props) {
         renderer: row => (
             <div>
 
-                {row.activityName == "CARDIO" ?
+                {row.activityName === "CARDIO" ?
 
                     <CardioTable data={getData(row)} /> :
                     <WorkoutTable data={getData(row)} />

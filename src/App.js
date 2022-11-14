@@ -15,6 +15,7 @@ import Activity from "./Pages/Activity";
 import AdminDashboard from './Admin/Components/AdminDashboard';
 import AdminLogin from './Authentication/Component/AdminLogin';
 import UploadFiles from "./Admin/Components/UploadFiles"
+import DietReccommendation from './Diet/Component/DietReccommendations';
 //import { useState } from 'react';
 
 
@@ -54,6 +55,7 @@ function App() {
           <Route path="/diet" element={<Diet />} />
           <Route path="/adminLogin" element={<AdminLogin />} />
           <Route path="/uploadFile" element={<UploadFiles />} />
+          <Route path="/reccommendation" element={<DietReccommendation />} />
         </Routes>
       </Router>
     </div>

@@ -7,44 +7,45 @@ import CustomerService from "../Service/CustomerService";
 
 function CustomerDetails() {
 
-  const [userDetails, setUserDetails] = useState( new Customer() );
+  const [userDetails, setUserDetails] = useState(new Customer());
   const navigate = useNavigate();
   let service = new CustomerService();
 
-  const handleFirstName = (e)=>{
-    setUserDetails({...userDetails, firstName: e.target.value });
+  const handleFirstName = (e) => {
+    setUserDetails({ ...userDetails, firstName: e.target.value });
   }
-  const handleLastName = (e)=>{
-    setUserDetails({...userDetails, lastName: e.target.value });
+  const handleLastName = (e) => {
+    setUserDetails({ ...userDetails, lastName: e.target.value });
   }
-  const handleEmail = (e)=>{
-    setUserDetails({...userDetails, userEmail: e.target.value });
+  const handleEmail = (e) => {
+    setUserDetails({ ...userDetails, userEmail: e.target.value });
   }
-  const handleGender = (e)=>{
-    setUserDetails({...userDetails, gender: e.target.value });
+  const handleGender = (e) => {
+    setUserDetails({ ...userDetails, gender: e.target.value });
   }
-  const handleBodyType = (e)=>{
-    setUserDetails({...userDetails, bodyType: e.target.value });
+  const handleBodyType = (e) => {
+    setUserDetails({ ...userDetails, bodyType: e.target.value });
   }
-  const handleActivityStatus = (e)=>{
-    setUserDetails({...userDetails, active: e.target.value });
+  const handleActivityStatus = (e) => {
+    setUserDetails({ ...userDetails, active: e.target.value });
   }
-  const handleWeight = (e)=>{
-    setUserDetails({...userDetails, weight: e.target.value });
+  const handleWeight = (e) => {
+    setUserDetails({ ...userDetails, weight: e.target.value });
   }
-  const handleHeight = (e)=>{
-    setUserDetails({...userDetails, height: e.target.value });
+  const handleHeight = (e) => {
+    setUserDetails({ ...userDetails, height: e.target.value });
   }
-  const handleAge = (e)=>{
-    setUserDetails({...userDetails, age: e.target.value });
+  const handleAge = (e) => {
+    setUserDetails({ ...userDetails, age: e.target.value });
   }
 
   const handleSubmit = (e) => {
     e.preventDefault();
     service.addCustomer(userDetails)
-    .then((result)=>{
-      navigate("/homeLoggedIn");
-    })
+      .then((result) => {
+        sessionStorage.setItem('customerDetails', JSON.stringify(userDetails));
+        navigate("/");
+      })
   }
 
   return (
@@ -112,8 +113,8 @@ function CustomerDetails() {
               <label>Height in cm</label>
               <input
                 className="form-control"
-                type="number" 
-                name="height"              
+                type="number"
+                name="height"
                 placeholder="Enter your Height"
                 value={userDetails.height}
                 onChange={handleHeight}
