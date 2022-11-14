@@ -4,8 +4,10 @@ const HomeCards = () => {
       <div className="card-group px-1 py-1">
         <div className="card bg-dark text-white">
           <img
+
             className="card-image image-fluid"
             src="https://source.unsplash.com/1400x600/?cardio"
+
             alt="Exercise"
           />
           <div className="card-image-overlay"></div>
