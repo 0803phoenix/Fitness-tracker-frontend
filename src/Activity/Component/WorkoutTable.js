@@ -32,12 +32,12 @@ function WorkoutTable(props) {
         <div>
             {console.log(props.data)}
 
-        <BootstrapTable 
-        keyField="activityId" 
-        data={props.data} 
-        columns={columns}
-        hover
-       />
+            <BootstrapTable
+                keyField="activityId"
+                data={props.data}
+                columns={columns}
+                hover
+            />
 
         </div>
     )
