@@ -4,6 +4,7 @@ import UserService from "./../Service/UserService";
 import JwtRequest from "./../Model/AppUser";
 import Modal from "react-bootstrap/Modal";
 import NavBar from "./../../Layout/Component/NavBar";
+import Footer from "../../Layout/Component/Footer";
 import CustomerDetails from "./../../Customer/Component/CustomerDetails";
 
 function Login() {

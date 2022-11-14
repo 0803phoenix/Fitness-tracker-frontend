@@ -4,6 +4,7 @@ import Nav from "react-bootstrap/Nav";
 import { LinkContainer } from "react-router-bootstrap";
 import Register from "../../Authentication/Component/Register";
 import Modal from "react-bootstrap/Modal";
+import { useNavigate } from "react-router-dom";
 
 
 const NavBar = (props) => {

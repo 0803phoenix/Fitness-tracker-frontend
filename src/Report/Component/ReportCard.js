@@ -1,26 +1,21 @@
-import React, { Component } from 'react'
 import HeroImage from '../../Layout/Component/HeroImage'
 // import { PieChart } from "react-minimal-pie-chart";
 import DonutChart from "react-donut-chart";
 import NavBarLogout from '../../Layout/Component/NavBarLogout';
 import NavBar from '../../Layout/Component/NavBar';
-import ActivityTable from '../../Activity/Component/ActivityTable';
-import DietTable from '../../Diet/Component/DietTable';
 import ReportService from '../Service/ReportService';
 import { useState } from 'react';
 import  BootstrapTable  from 'react-bootstrap-table-next';
-import CardioTable from './../../Activity/Component/CardioTable';
-import WorkoutTable from './../../Activity/Component/WorkoutTable';
+import Footer from '../../Layout/Component/Footer';
+
 const ReportCard =()=>{
   const[report,setReport]=useState([]);
     let service = new ReportService();
     const [showTable, setShowTable] = useState(false);
-    const viewReport = () =>{
-        // alert("in view reports");
+    const viewReport = () =>{   
         service
         .getReport()
         .then((result)=>{
-        //   alert(JSON.stringify(result));
             setReport(result);
             setShowTable(true);
         }).catch((error)=>{
@@ -28,6 +23,7 @@ const ReportCard =()=>{
         });
 
     }
+
     const data = [
       {
         label: "Calories Consumed",
@@ -46,10 +42,6 @@ const ReportCard =()=>{
         return data;
     }
     const activityColumns = [
-        {
-            dataField: "activityId",
-            text: "Activity ID",
-        },
         {
             dataField: "activityName",
             text: "Activity Description",
@@ -90,9 +82,7 @@ const ReportCard =()=>{
     const expandRow = {
         renderer: row => (
             <div>
-                {/* {console.log(row)} */}
                 {row.activityName == "CARDIO" ?
-
                     <BootstrapTable keyField="activityId" data={getData(row)} columns={cardioColumns} /> :
                     <BootstrapTable keyField="activityId" data={getData(row)} columns={workoutColumns}/>
                 }
@@ -136,40 +126,83 @@ const ReportCard =()=>{
       };
     return (
       <>
-     {sessionStorage.getItem('currentUser')==null?<NavBar />:<NavBarLogout/>}
-        <HeroImage  src="https://cdn.searchenginejournal.com/wp-content/uploads/2020/01/marketing-reports-5e0f54085b56c.png"
+      
+       {sessionStorage.getItem('currentUser')==null?<NavBar />:<NavBarLogout/>}
+        <HeroImage  src="https://source.unsplash.com/1400x500/?report"
         title="Get Your Daily Reports"
         text=""/>
     
-        
-       {showTable ? <DonutChart colors={colors} data={data} width={350} option={{responsive:true}}/>:null}
-      {/* <div className="card p-5 ">
-        <ActivityTable data={report.activitiesDone}/>
-        
-      </div>
-      <div className="card p-5 ">
-        <DietTable data={report.dietsConsumed}/>
-        
-      </div> */}
-            {/* {console.log(report.activitiesDone)} */}
-            {showTable ? <BootstrapTable
+       <div className='card p-5' onClick={viewReport}>
+        <h5 className='display-4'>View Your Daily Report!</h5>
+       </div>
+       
+       {showTable ? 
+       <>
+       <div className='card-group'>
+        <div className='card p-5'>
+          <DonutChart colors={colors} data={data} width={700} innerRadius={0.40} outerRadius={0.60} option={{responsive:true}}/>
+        </div>
+        <div className='card p-5'>
+          <div className='row'>
+            <div className='card'>
+            <p className='lead text-left' style={{fontSize:"40px"}} >Activities done today:</p>
+              {report.activitiesDone.length>0?<BootstrapTable
                 keyField="activityId"
                 data={report.activitiesDone}
                 columns={activityColumns}
                 expandRow={expandRow}
                 hover
-             />:null}
-             
-             {showTable? <BootstrapTable
+             />:<p className='lead text-left' style={{fontSize:"20px",color:"red"}} >You havn't added any activities</p>}
+            </div>
+          </div>
+          <div className='row'>  
+            <div className='card mt-4'>
+            <p className='lead text-left' style={{fontSize:"40px"}} >Diets consumed today:</p>
+              {report.dietsConsumed.length>0?<BootstrapTable
                 keyField="dietId"
                 data={report.dietsConsumed}
                 columns={dietColumns}
                 expandRow={dietExpandRow}
                 hover
-             />:null}
-      
-      <button onClick={viewReport}>Click to view </button>
-      </>
+             />:<p className='lead text-left' style={{fontSize:"20px",color:"red"}} >You havn't added any diets</p>}  
+            </div>
+            <p className='lead p-3' style={{fontSize:"25px",fontWeight:"normal"}}>Your BMI is: {report.bmi}</p>  
+          </div>   
+        </div>
+       </div>
+       </>
+       :
+       null}
+       
+{/*           
+       {showTable ? <>
+        <div className='card p-5'>
+         <p className='lead text-left' style={{fontSize:"40px"}} >Activities done today:</p>
+         <BootstrapTable
+                keyField="activityId"
+                data={report.activitiesDone}
+                columns={activityColumns}
+                expandRow={expandRow}
+                hover
+             />
+        </div>
+      </> : null}
+           
+      {showTable? 
+      <>
+      <div className='card p-5'>
+      <p className='lead text-left' style={{fontSize:"40px"}} >Diets consumed today:</p> 
+        <BootstrapTable
+                keyField="dietId"
+                data={report.dietsConsumed}
+                columns={dietColumns}
+                expandRow={dietExpandRow}
+                hover
+             /> 
+         </div>    
+         </> : null} */}
+     <Footer/>        
+    </>
     )
   }
 
