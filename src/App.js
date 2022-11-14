@@ -2,14 +2,14 @@ import './App.css';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import Login from './Authentication/Component/Login';
 import Logout from './Authentication/Component/Logout';
-import CustomerList from './Customer/Component/CustomerList';
+// import CustomerList from './Customer/Component/CustomerList';
 import Home from './Pages/Home';
 import About from './Pages/About';
 import Contact from './Pages/Contact';
 import Diet from './Pages/Diet';
 import Register from './Authentication/Component/Register';
 import CustomerDetails from './Customer/Component/CustomerDetails';
-import AddCardio from "./Activity/Component/AddCardio";
+// import AddCardio from "./Activity/Component/AddCardio";
 import Activity from "./Pages/Activity";
 import AdminDashboard from './Admin/Components/AdminDashboard';
 import AdminLogin from './Authentication/Component/AdminLogin';
@@ -42,22 +42,20 @@ function App() {
           appProps={{ isAuthenticated }}
         /> */}
           <Route path="/register" element={<Register />} />
+          <Route path="/login" element={<Login />} />
           <Route path="/customerDetails" element={<CustomerDetails />} />
-          <Route path="/activity" element={<Activity />} />
-          <Route path="/admin" element={<AdminDashboard />} />
-          <Route path="/addCardio" element={<AddCardio />} />
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/login" element={<Login />} />
           <Route path="/logout" element={<Logout />} />
-          <Route path="/customerList" element={<CustomerList />} />
-          <Route path="/diet" element={<Diet />} />
-          <Route path="/adminLogin" element={<AdminLogin />} />
-          <Route path="/uploadFile" element={<UploadFiles />} />
-          <Route path="/reccommendation" element={<DietReccommendation />} />
-          <Route path="/report" element={<ReportCard/>} />
           <Route path="/userProfile" element ={<UserProfile/>} />
+          <Route path="/activity" element={<Activity />} />
+          <Route path="/diet" element={<Diet />} />
+          <Route path="/report" element={<ReportCard/>} />
+          <Route path="/reccommendation" element={<DietReccommendation />} />
+          <Route path="/adminLogin" element={<AdminLogin />} />
+          <Route path="/admin" element={<AdminDashboard />} />
+          <Route path="/uploadFile" element={<UploadFiles />} />
         </Routes>
       </Router>
     </div>

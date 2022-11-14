@@ -19,9 +19,6 @@ const HomeCards = () => {
               ActivityTracker will keep track of your Cardio and Workout and daily active calorie burn.
               Research has shown that just by being more active you will also be healthier.
             </p>
-            <a href="" className="btn btn-primary">
-              Go somewhere
-            </a>
           </div>
         </div>
       </div>
@@ -34,9 +31,6 @@ const HomeCards = () => {
               Then there's nothing to worry about when it's time to eat.
               Planning ahead means less produce going bad in the fridge.
             </p>
-            <a href="" className="btn btn-primary">
-              Go somewhere
-            </a>
           </div>
         </div>
         <div className="card bg-dark text-white">
@@ -65,9 +59,6 @@ const HomeCards = () => {
               total amount of calories you are consuming and burning.<br />
               Also get diet Recommendation based on your specific body type!
             </p>
-            <a href="" className="btn btn-primary">
-              Go somewhere
-            </a>
           </div>
         </div>
       </div>

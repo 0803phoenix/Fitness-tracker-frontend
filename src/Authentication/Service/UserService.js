@@ -31,7 +31,7 @@ class UserService {
       .post("http://localhost:9991/register", user)
       .then((response) => {
         return response.data;
-      });
+      })
   }
 
   getCustomer(){
