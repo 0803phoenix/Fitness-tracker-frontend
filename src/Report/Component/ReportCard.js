@@ -7,6 +7,7 @@ import ReportService from '../Service/ReportService';
 import { useState } from 'react';
 import  BootstrapTable  from 'react-bootstrap-table-next';
 import Footer from '../../Layout/Component/Footer';
+import ErrorLanding from '../../Pages/ErrorLanding';
 
 const ReportCard =()=>{
   const[report,setReport]=useState([]);
@@ -126,8 +127,9 @@ const ReportCard =()=>{
       };
     return (
       <>
-      
-       {sessionStorage.getItem('currentUser')==null?<NavBar />:<NavBarLogout/>}
+       {sessionStorage.getItem('currentUser')==null?<ErrorLanding message="You are not logged in"/>:
+       <>
+        <NavBarLogout/>
         <HeroImage  src="https://source.unsplash.com/1400x500/?report"
         title="Get Your Daily Reports"
         text=""/>
@@ -173,37 +175,10 @@ const ReportCard =()=>{
        </>
        :
        null}
-       
-{/*           
-       {showTable ? <>
-        <div className='card p-5'>
-         <p className='lead text-left' style={{fontSize:"40px"}} >Activities done today:</p>
-         <BootstrapTable
-                keyField="activityId"
-                data={report.activitiesDone}
-                columns={activityColumns}
-                expandRow={expandRow}
-                hover
-             />
-        </div>
-      </> : null}
-           
-      {showTable? 
-      <>
-      <div className='card p-5'>
-      <p className='lead text-left' style={{fontSize:"40px"}} >Diets consumed today:</p> 
-        <BootstrapTable
-                keyField="dietId"
-                data={report.dietsConsumed}
-                columns={dietColumns}
-                expandRow={dietExpandRow}
-                hover
-             /> 
-         </div>    
-         </> : null} */}
-     <Footer/>        
-    </>
-    )
+     <Footer/>   
+     </> 
+    }     
+    </>    )
   }
 
 

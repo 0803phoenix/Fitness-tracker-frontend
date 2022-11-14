@@ -5,11 +5,13 @@ import NavBarLogout from "../../Layout/Component/NavBarLogout";
 import EndomorphReccomendation from "./EndomorphReccomendation";
 import MesomorphReccomendation from "./MesomorphReccomendation";
 import EctomorphReccommendation from './EctomorphReccomendation';
-
+import ErrorLanding from "../../Pages/ErrorLanding";
 
 function DietReccommendation() {
 
     return (
+       <>
+        {sessionStorage.getItem('currentUser')==null?<ErrorLanding message="You are not logged in"/>:<>
         <div>
             <NavBarLogout />
 
@@ -26,7 +28,9 @@ function DietReccommendation() {
             }
             <Footer />
         </div >
-
+       </>
+        } 
+    </>        
     );
 }
 

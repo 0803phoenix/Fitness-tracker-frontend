@@ -28,10 +28,9 @@ function Login() {
       }
       else{ 
         sessionStorage.setItem('customerDetails',JSON.stringify(result));
-        navigate("/");
-      }
-      
-    })
+          navigate("/");
+        }
+      })
   }
   return (
     <>
