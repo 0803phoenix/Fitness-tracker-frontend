@@ -37,6 +37,7 @@ function ActivityTable(props) {
     const expandRow = {
         renderer: row => (
             <div>
+
                 {row.activityName === "CARDIO" ?
 
                     <CardioTable data={getData(row)} /> :
