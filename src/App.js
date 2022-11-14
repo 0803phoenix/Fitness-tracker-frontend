@@ -17,6 +17,7 @@ import UploadFiles from "./Admin/Components/UploadFiles"
 import DietReccommendation from './Diet/Component/DietReccommendations';
 import ReportCard from './Report/Component/ReportCard';
 //import { useState } from 'react';
+import UserProfile from './UserProfile/Component/UserProfile';
 
 
 
@@ -56,6 +57,7 @@ function App() {
           <Route path="/uploadFile" element={<UploadFiles />} />
           <Route path="/reccommendation" element={<DietReccommendation />} />
           <Route path="/report" element={<ReportCard/>} />
+          <Route path="/userProfile" element ={<UserProfile/>} />
         </Routes>
       </Router>
     </div>
