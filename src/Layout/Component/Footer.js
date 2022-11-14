@@ -9,8 +9,7 @@ function Footer() {
                     <a href="#">Back to top</a>
                 </p>
                 <p>
-                    © 2019-2022 iCoder, Inc. · <a href="#">Privacy</a> ·{" "}
-                    <a href="#">Terms</a>
+                    © 2019-2022 FitnessTracker, Inc. 
                 </p>
             </div>
 

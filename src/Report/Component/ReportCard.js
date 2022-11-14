@@ -141,8 +141,8 @@ const ReportCard =()=>{
        {showTable ? 
        <>
        <div className='card-group'>
-        <div className='card p-5'>
-          <DonutChart colors={colors} data={data} width={700} innerRadius={0.40} outerRadius={0.60} option={{responsive:true}}/>
+        <div className='card pt-5'>
+          <DonutChart colors={colors} data={data} width={500} innerRadius={0.60} outerRadius={0.80} option={{responsive:true}}/>
         </div>
         <div className='card p-5'>
           <div className='row'>

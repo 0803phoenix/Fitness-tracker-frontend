@@ -29,7 +29,6 @@ class FoodService {
         return axios.delete(this.getUrl(dietId,foodId),
         {headers:AuthHeader()})
         .then((response)=>{
-            alert(JSON.stringify(response.data));
             return response.data;
         })
     }
