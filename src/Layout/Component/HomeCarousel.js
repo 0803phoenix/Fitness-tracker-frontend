@@ -31,8 +31,8 @@ function HomeCarousel() {
           <Carousel.Caption>
             <h3>Put your diet on autopilot</h3>
             <p>Fitness Tracker creates personalized meal plans based on your food preferences,
-              budget, and schedule. Reach your diet and nutritional goals with our
-              calorie calculator, weekly meal plans, grocery lists and more.</p>
+              and schedule. Reach your diet and nutritional goals with our
+              calorie calculator, weekly meal plans and more.</p>
           </Carousel.Caption>
         </Carousel.Item>
 
