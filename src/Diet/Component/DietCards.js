@@ -3,25 +3,22 @@ import DietService from "../Service/DietService";
 import CreateDiet from "./CreateDiet";
 import DietTable from "./DietTable";
 import Modal from "react-bootstrap/Modal";
+import { connect } from 'react-redux';
+import {getAllDiets} from '../../DietRedux/Action/DietAction';
 
-const DietCards = () => {
-    
+
+const DietCards = (props) => {
     const [show, setShow] = useState(false);
     const [showTable, setShowTable] = useState(false);
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
     const[diet,setDiet]=useState([]);
     let service = new DietService();
-    const viewDiet = () =>{
-        service
-        .getDiets()
-        .then((result)=>{
-            setDiet(result);
-            setShowTable(true);
-        }).catch((error)=>{
-            alert(error);
-        });
 
+    
+    const viewDiet = () =>{
+          props.getAllDiets();
+          setShowTable(true);
     }
     return (
      <> 
@@ -59,7 +56,9 @@ const DietCards = () => {
       {showTable ?
       <div className="card p-5">
         <div className="card p-3">
-            <DietTable data={diet}/>
+            
+            {/* {alert("inside table card "+JSON.stringify(props.diet.diet))} */}
+            <DietTable data={props.diet.diet}/>
         </div>
       </div>
         :
@@ -69,5 +68,12 @@ const DietCards = () => {
      </>  
     );
   }
-  
-  export default DietCards;
+  const mapStateToProps = (state)=>{
+    // const {diet,flag,error} = state
+    return {diet:state.diet,
+        flag:state.flag,
+        error:state.error
+    }
+  }
+  export default connect(mapStateToProps, {getAllDiets})(DietCards);
+  // export default DietCards;

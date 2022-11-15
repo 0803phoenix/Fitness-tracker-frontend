@@ -23,6 +23,7 @@ function DietTable(props) {
     const expandRow = {
       renderer: row => (
         <>
+        {/* {JSON.stringify(row)} */}
           <MealTable data={row.mealList} diet={row.dietId}/> 
         </>
       )

@@ -1,4 +1,4 @@
-import {ADD_DIET_REQUEST, GET_DIETS_REQUEST,GET_DIETS_SUCCESS,GET_DIETS_FAILURE} from "../Action/dietType"
+import {ADD_DIET_REQUEST, GET_DIETS_REQUEST,GET_DIETS_SUCCESS,GET_DIETS_FAILURE} from "../Type/dietType";
 
 
 const initialState = {

@@ -4,8 +4,10 @@ import { useNavigate } from "react-router";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import DietService from '../Service/DietService';
+import {connect} from "react-redux";
+import {addDiet} from '../../DietRedux/Action/DietAction';
 
-function CreateDiet() {
+function CreateDiet(props) {
     
     const [createDiet, setCreateDiet] = useState({
         dayOfWeek: 'SUNDAY',
@@ -18,6 +20,12 @@ function CreateDiet() {
 
     const handleDay = (e) =>{
         setCreateDiet({...createDiet,dayOfWeek:e.target.value});
+    }
+    const handleCreate = (e) => {
+      e.preventDefault();  
+        props.addDiet(createDiet);
+          navigate("/diet");
+          window.location.reload();
     }
     
     const navigate = useNavigate();
@@ -60,19 +68,7 @@ function CreateDiet() {
 
       <Modal.Footer>
         <Button variant="secondary"
-          onClick={
-            (e) => {
-              e.preventDefault();
-              service
-                .addDiet(createDiet)
-                .then((result) => {
-                  navigate("/diet");
-                  alert("diet added successfully");
-                })
-                .catch((error)=>{
-                  alert(JSON.stringify(error.response.data));
-              })
-            }}>
+          onClick={handleCreate}>
           Create
         </Button>
       </Modal.Footer>
@@ -80,5 +76,12 @@ function CreateDiet() {
   </>
   )
 }
-
-export default CreateDiet;
+//Redux Part
+const mapDispatchToProps =(dispatch)=>{
+  return {
+    addDiet:(createDiet)=>{
+      dispatch(addDiet(createDiet));
+    }
+  }
+}
+export default connect(null,mapDispatchToProps)(CreateDiet);

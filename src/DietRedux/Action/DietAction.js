@@ -1,6 +1,6 @@
 import DietService from './../../Diet/Service/DietService';
 
-import {ADD_DIET_REQUEST, GET_DIETS_REQUEST,GET_DIETS_SUCCESS,GET_DIETS_FAILURE} from "../Action/dietType"
+import {ADD_DIET_REQUEST, GET_DIETS_REQUEST,GET_DIETS_SUCCESS,GET_DIETS_FAILURE} from "../Type/dietType"
 
 export const addNewDiet =(diet)=>{
     return { 
@@ -43,8 +43,10 @@ export const addDiet = (diet)=>{
         let service = new DietService();
         service.addDiet(diet)
         .then((result)=>{
-            const diet1 = result.data;
-            dispatch(addNewDiet(diet1))
+            console.log(result);
+            const diet1 = result;
+            dispatch(addNewDiet(diet1));
+            alert("Diet added Successfully");
         })
         .catch((error)=>{
             alert(JSON.stringify(error.response.data.message));
