@@ -25,10 +25,9 @@ function Diet() {
           <h1 className="display-4">Get Diet Recommendations!</h1>
           <div className="card-body">
             <p className="lead text-justify"></p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad
-            minim veniam, quis nostrud exercitation ullamco laboris nisi ut
-            aliquip ex ea commodo consequat.
+            Fitness Tracker creates personalized meal plans based on your body type can see food preferences,
+              and schedule. Reach your diet and nutritional goals with our
+              calorie calculator, weekly meal plans and more.
           </div>
         </div>
         <DietCards />

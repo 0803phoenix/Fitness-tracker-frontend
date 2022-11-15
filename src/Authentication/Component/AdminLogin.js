@@ -3,6 +3,7 @@ import { useNavigate } from "react-router";
 import UserService from "./../Service/UserService";
 import JwtRequest from "./../Model/AppUser";
 import NavBar from "./../../Layout/Component/NavBar";
+import Footer from './../../Layout/Component/Footer';
 
 function AdminLogin() {
   const [user, setUser] = useState({ login: new JwtRequest() });
@@ -77,19 +78,7 @@ function AdminLogin() {
           </button>
         </div>
       </div>
-
-
-      <footer className="container-fluid bg-secondary text-white fixed-bottom py-1">
-        <div className="mt-3">
-          <p className="float-right">
-            <a href="#">Back to top</a>
-          </p>
-          <p>
-            © 2019-2022 iCoder, Inc. · <a href="#">Privacy</a> ·{" "}
-            <a href="#">Terms</a>
-          </p>
-        </div>
-      </footer>
+      <Footer/>
     </>
   );
 }
