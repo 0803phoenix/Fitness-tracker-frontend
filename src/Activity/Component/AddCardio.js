@@ -23,9 +23,6 @@ function AddCardio() {
   const handleDayOfWeek = (e) => {
     setCardioDetails({ ...cardioDetails, dayOfWeek: e.target.value });
   }
-  const handleSuccesFlag = (e) => {
-    setCardioDetails({ ...cardioDetails, succesFlag: e.target.value });
-  }
   const handleActivityName = (e) => {
     setCardioDetails({ ...cardioDetails, activityName: e.target.value });
   }
@@ -92,13 +89,6 @@ function AddCardio() {
                 <option>FRIDAY</option>
                 <option>SATURDAY</option>
                 <option>SUNDAY</option>
-              </select>
-            </div>
-            <div className="form-group">
-              <label >Success Flag</label>
-              <select class="form-control" value={cardioDetails.succesFlag} onChange={handleSuccesFlag}>
-                <option>true</option>
-                <option>false</option>
               </select>
             </div>
 

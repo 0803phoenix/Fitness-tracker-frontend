@@ -4,6 +4,6 @@ class Workout {
     workoutType = 'CHESTWORKOUT';
     noOfReps = 0;
     dayOfWeek = 'MONDAY';
-    successFlag = false;
+    successFlag = true;
 }
 export default Workout;

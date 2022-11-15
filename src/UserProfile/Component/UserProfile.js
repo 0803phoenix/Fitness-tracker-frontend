@@ -1,78 +1,9 @@
 import React from 'react'
-import { useState } from 'react';
-import UserService from "../../Authentication/Service/UserService";
 import NavBarLogout from '../../Layout/Component/NavBarLogout';
 import NavBar from '../../Layout/Component/NavBar';
 import Footer from '../../Layout/Component/Footer';
-import UserProfileService from './../UserProfileService/UserProfileService';
-export default function UserProfile() {
-    const[email,setEmail]=useState({
-        newEmail:''
-    });
-    const[height,setHeight]=useState({
-        updatedHeight:0
-    });
-    const[weight,setWeight]=useState({
-        updatedWeight:0
-    });
-    let service = new UserProfileService();
-    let userservice= new UserService();
 
-    const updateEmail = (email) =>{
-        service
-        .updateEmail(email)
-        .then((result)=>{
-          alert(JSON.stringify(result));
-            setEmail(result);
-        }).catch((error)=>{
-            alert(error);
-        });
-    }
-    const updateHeight = (height) =>{
-        service
-        .updateHeight(height)
-        .then((result)=>{
-          alert(JSON.stringify(result));
-            setHeight(result);
-        }).catch((error)=>{
-            alert(error);
-        });
-    }
-    const updateWeight = (weight) =>{
-        alert(JSON.stringify(weight))
-        service
-        .updateWeight(weight)
-        .then((result)=>{
-          alert(JSON.stringify(result));
-            setWeight(result);
-        }).catch((error)=>{
-            alert(error);
-        });
-    }
-    
-    const getCustomerDetails = () =>{
-        userservice
-        .getCustomer()
-        .then((result)=>{
-            sessionStorage.setItem('customerDetails',JSON.stringify(result));
-          alert(JSON.stringify(result));
-            // const customer=JSON.parse(sessionStorage.getItem('cust'));
-        }).catch((error)=>{
-            alert(error);
-        });
-    }
-    const handleWeight=(e)=>{
-        e.preventDefault();
-        setWeight({updatedWeight:e.target.value});
-    }
-    const handleHeight=(e)=>{
-        e.preventDefault();
-        setHeight({updatedHeight:e.target.value});
-    }
-    const handleEmail=(e)=>{
-        e.preventDefault();
-        setEmail({updatedEmail:e.target.value});
-    }
+export default function UserProfile() {
     
     const customer=JSON.parse(sessionStorage.getItem('customerDetails'));
     return (
@@ -124,26 +55,18 @@ export default function UserProfile() {
               <input
                 className="form-control"
                 type="number"
-                name="weight"
                 placeholder={customer.weight}
-                value={weight.updatedWeight}
-                
-                onChange={handleWeight}
+                disabled
               />
-              <button onClick={updateWeight}>Update Weight</button>
             </div>
             <div className="col float-right">
               <label>Height in cm: </label>
               <input
                 className="form-control"
-                type="number" 
-                name="height"              
+                type="number"           
                 placeholder={customer.height}
-                value={height.updatedHeight}
-                onChange={handleHeight}
-                
+                disabled
               />
-              <button onClick={updateHeight}>Update Height</button>
             </div>
             </div>
             
@@ -152,16 +75,12 @@ export default function UserProfile() {
               <input
                 className="form-control"
                 type="email"
-                name="userEmail"
                 placeholder={customer.userEmail}
-                value={email.updatedEmail}
-                onChange={handleEmail}
+                disabled
               />
-              <button  type="submit"onClick={updateEmail}>Update Email</button>
             </div>
             
           </form>
-        {/* </div > */}
         </div>
         <Footer/>
         </>

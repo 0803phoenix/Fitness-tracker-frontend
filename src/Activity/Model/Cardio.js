@@ -3,7 +3,7 @@ class Cardio {
     distance = 0;
     timeInMinutes = 0;
     dayOfWeek = 'MONDAY';
-    succesFlag = false;
+    succesFlag = true;
     activityName = 'CARDIO';
     caloriesBurned = 0;
 }

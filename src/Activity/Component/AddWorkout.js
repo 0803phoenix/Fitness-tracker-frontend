@@ -19,9 +19,6 @@ function AddWorkout() {
     const handleDayOfWeek = (e) => {
         setworkoutDetails({ ...workoutDetails, dayOfWeek: e.target.value });
     }
-    const handleSuccesFlag = (e) => {
-        setworkoutDetails({ ...workoutDetails, succesFlag: e.target.value });
-    }
     const handleActivityName = (e) => {
         setworkoutDetails({ ...workoutDetails, activityName: e.target.value });
     }
@@ -91,13 +88,6 @@ function AddWorkout() {
                                 value={workoutDetails.caloriesBurned}
                                 onChange={handleCaloriesBurned}
                             />
-                        </div>
-                        <div className="form-group">
-                            <label >Success Flag</label>
-                            <select class="form-control" value={workoutDetails.succesFlag} onChange={handleSuccesFlag}>
-                                <option>false</option>
-                                <option>true</option>
-                            </select>
                         </div>
 
 

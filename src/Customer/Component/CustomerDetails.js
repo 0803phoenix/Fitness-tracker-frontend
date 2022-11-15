@@ -6,7 +6,8 @@ import Modal from "react-bootstrap/Modal";
 import CustomerService from "../Service/CustomerService";
 
 function CustomerDetails() {
-
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState('');
   const [userDetails, setUserDetails] = useState(new Customer());
   const navigate = useNavigate();
   let service = new CustomerService();
@@ -46,7 +47,8 @@ function CustomerDetails() {
         sessionStorage.setItem('customerDetails', JSON.stringify(userDetails));
         navigate("/");
       }).catch((error)=>{
-        alert(JSON.stringify(error.response.data.message));
+        setError(true);
+        setMessage(error.response.data.message);
       })
   }
 
@@ -59,6 +61,7 @@ function CustomerDetails() {
 
         <Modal.Body>
           <form>
+          {error?<p style={{color:"red"}}>{message}</p>:null}
             <div className="form-group">
               <label>First Name</label>
               <input

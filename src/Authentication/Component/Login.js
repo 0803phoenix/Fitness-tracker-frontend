@@ -9,6 +9,8 @@ import CustomerDetails from "./../../Customer/Component/CustomerDetails";
 
 function Login() {
   const [user, setUser] = useState({ login: new JwtRequest() });
+  const [error, setError] = useState(false);
+  const [message, setMessage] = useState('');
   const navigate = useNavigate();
   let service = new UserService();
 
@@ -34,11 +36,10 @@ function Login() {
   }
   return (
     <>
-      <div className="container">
         <NavBar />
-      </div>
+      
 
-      <div style={{
+      <div className="p-5" style={{
         backgroundImage:
           "url('https://source.unsplash.com/2400x1000/?gym, exercise')",
         height: '100vh',
@@ -47,7 +48,8 @@ function Login() {
         backgroundRepeat: 'no-repeat',
         
       }}>
-        <div className="container w-25 float-center pt-5 " >
+        <div className="card container w-25 float-center" >
+          <div className="p-5">
           <h1>Login</h1>
 
           <form>
@@ -81,6 +83,7 @@ function Login() {
                 }
               />
             </div>
+            {error?<p style={{color:"red"}}>{message}</p>:null}
           </form>
           <button
             className="btn btn-secondary py-2"
@@ -95,12 +98,14 @@ function Login() {
                 })
                 .catch((error) => {
                 
-                  alert("Invalid Username/Password. Please try again!");
+                  setError(true);
+                  setMessage(error.response.data.message);
                 });
             }}
           >
             Login
           </button>
+          </div>
           <Modal show={show} onHide={handleClose}>
             <CustomerDetails />
           </Modal>
