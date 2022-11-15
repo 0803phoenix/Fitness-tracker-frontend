@@ -5,7 +5,7 @@ function ErrorLanding(props) {
   return (
     <>
         <NavBar/>
-        <h1 className='display-2'>{props.message}</h1>
+        <h1 className='display-4 pt-5 mt-5'>{props.message}</h1>
     </>
   )
 }
